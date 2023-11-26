@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4a5a04c45813f42801b141cc362987, type: 3}
+  m_Name: gamedata
+  m_EditorClassIdentifier: 
+  items:
+  - code: 1
+    name: aa
+    price: 22
+    bbb: 1
+    itemType: 1
+    lootRange:
+      min: 1
+      max: 2
+  - code: 2
+    name: bb
+    price: 23
+    bbb: 2
+    itemType: 2
+    lootRange:
+      min: 0
+      max: 0
+  - code: 3
+    name: cc
+    price: 24
+    bbb: 3
+    itemType: 2
+    lootRange:
+      min: 0
+      max: 0
+  - code: 4
+    name: aa
+    price: 25
+    bbb: 4
+    itemType: 1
+    lootRange:
+      min: 0
+      max: 0
+  - code: 5
+    name: bb
+    price: 26
+    bbb: 5
+    itemType: 0
+    lootRange:
+      min: 0
+      max: 0
+  - code: 6
+    name: aa
+    price: 27
+    bbb: 7
+    itemType: 0
+    lootRange:
+      min: 0
+      max: 0
+  - code: 7
+    name: bb
+    price: 28
+    bbb: 8
+    itemType: 2
+    lootRange:
+      min: 0
+      max: 0
+  - code: 8
+    name: cc
+    price: 29
+    bbb: 9
+    itemType: 2
+    lootRange:
+      min: 0
+      max: 0
+  - code: 9
+    name: aa
+    price: 30
+    bbb: 10
+    itemType: 0
+    lootRange:
+      min: 0
+      max: 0
+  - code: 10
+    name: bb
+    price: 31
+    bbb: 11
+    itemType: 2
+    lootRange:
+      min: 0
+      max: 0
+  - code: 11
+    name: cc
+    price: 32
+    bbb: 12
+    itemType: 1
+    lootRange:
+      min: 0
+      max: 0
+  - code: 12
+    name: aa
+    price: 33
+    bbb: 13
+    itemType: 2
+    lootRange:
+      min: 0
+      max: 0
+  - code: 13
+    name: bb
+    price: 34
+    bbb: 14
+    itemType: 2
+    lootRange:
+      min: 0
+      max: 0
+  - code: 14
+    name: cc
+    price: 35
+    bbb: 15
+    itemType: 0
+    lootRange:
+      min: 0
+      max: 0
+  - code: 15
+    name: aa
+    price: 36
+    bbb: 16
+    itemType: 1
+    lootRange:
+      min: 0
+      max: 0
+  - code: 16
+    name: bb
+    price: 37
+    bbb: 17
+    itemType: 1
+    lootRange:
+      min: 0
+      max: 0
+  monsters:
+  - code: 1
+    name: w
+    path: Assets/Prefab/Monster/RedAx.prefab
+    health: 100
+  - code: 2
+    name: e
+    path: 
+    health: 100
+  stages:
+  - code: 1
+    name: "\uC232-1"
+    monsters:
+      values: 01000000
+  skills:
+  - code: 1
+    name: Explosion
+    damage: 30
+    coolTime: 5
+    imagePath: UI/1-bit 16px icons part-1 outlines[ExplosionSkill]
+    fxPrerfabPath: Assets/Prefab/Effect/P_ExplosionFx.prefab

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 3fb64784b8d59ba4e84160617e790769
+  m_SerializeEntries:
+  - m_GUID: 18701daf060055445944d1bf6e3321d6
+    m_Address: Assets/Prefab/P_TempImage.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c19b4a7017d83b14aacef9744d8ac504
+    m_Address: Assets/Prefab/gamedata.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f57300c6bcec5e544bc776b67d2c9d42
+    m_Address: Assets/Prefab/Enemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 223523190f9964b44b2fcf1086abf15c
+    m_Address: Assets/Prefab/Monster/RedAx.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e1c119679b8e7e419c55890773e6875
+    m_Address: Assets/Prefab/P_DamageFont.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad7e91f342af3f448a6ca98031a1213d
+    m_Address: UI/1-bit 16px icons part-1 outlines
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1700a39abd1969b4aba15c068fbf365b
+    m_Address: Assets/Prefab/Effect/P_ExplosionFx.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9746b18769b7e7444b7afad05742ec27, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e620671a8628e264bb00cfb5354eafc8, type: 2}
+    - {fileID: 11400000, guid: 5d29047b9d9a92d408fdc2fa023285cf, type: 2}
