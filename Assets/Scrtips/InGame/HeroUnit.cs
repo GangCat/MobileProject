@@ -1,13 +1,14 @@
 using DI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.EditorTools;
 using UnityEngine;
 using static UnitAnim;
 
 public class HeroUnit : DIMono
 {
     public float damage;
-    public float HP;
+    public float curHP;
     public float maxHP;
     public bool isAttack;
 
@@ -18,19 +19,19 @@ public class HeroUnit : DIMono
 
     public Animator animator;
 
-    public float HpRatio => HP / maxHP;
+    public float HpRatio => curHP / maxHP;
 
 
     public override void Init()
     {
         unitAnim = new UnitAnim(animator);
         unitAnim.PlayAni(AniKind.Walk);
-        HP = maxHP;
+        curHP = maxHP;
     }
 
     public void Update()
     {
-        HP -= Time.deltaTime * 100;
+        curHP -= Time.deltaTime * 100;
 
         // 적이 더이상 없는 경우
         if (MainObjs.EnemyUnits.Count < 1)
@@ -64,6 +65,22 @@ public class HeroUnit : DIMono
             return;
 
         MainObjs.EnemyUnits[0].TakeDamage(damage);
+    }
+
+    public void TakeDamage(float _dmg)
+    {
+        curHP -= _dmg;
+        if (curHP <= 0)
+        {
+            unitAnim.PlayAni(AniKind.Dead);
+        }
+
+        //데미지 폰트를 오브젝트 풀링으로 관리하며 데미지 출력
+        //GameObject damageFontGo = poolManager.GetObject(DamageFontPath);
+        //damageFontGo.transform.position = unitVisual.damageFontTf.position;
+        //damageFontGo.GetComponent<DamageFont>().Show(_dmg, Color.white);
+
+        //StartCoroutine(unitVisual.DamageFx());
     }
 
 

@@ -67,9 +67,8 @@ public class Stage
     public int code;
     public string name;
 
-
     public IntList monsters;
-
+    public int bossCode;
     List<Monster> _monsterList;
     public List<Monster> Monsters
     {
@@ -123,4 +122,15 @@ public class Skill
         Addressables.Release<Sprite>(_icon);
         _icon = null;
     }
+}
+
+[Serializable]
+public class BossMonster
+{
+    public int code;
+    public string name;
+    public string path;
+    public float damage;
+    public float health;
+    public float attackRate;
 }

@@ -24,14 +24,14 @@ public class HeroHpText : DIMono
 
     private void Update()
     {
-        if(prevHP != (int)heroUnit.HP || prevMaxHP != (int)heroUnit.maxHP)
+        if(prevHP != (int)heroUnit.curHP || prevMaxHP != (int)heroUnit.maxHP)
             UpdateText();
     }
 
     void UpdateText()
     {
-        text.text = string.Format("{0:#0} / {1:#0}", heroUnit.HP, heroUnit.maxHP);
-        prevHP = (int)heroUnit.HP;
+        text.text = string.Format("{0:#0} / {1:#0}", heroUnit.curHP, heroUnit.maxHP);
+        prevHP = (int)heroUnit.curHP;
         prevMaxHP = (int)heroUnit.maxHP;
     }
 }

@@ -39,7 +39,6 @@ public class ObjectPoolManager :MonoBehaviour
         return objPool;
     }
 
-
     public GameObject GetObject(string path)
     {
         // 등록된 풀이 없으면 생성

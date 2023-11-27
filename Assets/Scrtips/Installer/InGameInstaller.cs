@@ -36,6 +36,7 @@ public class InGameInstaller : MonoBehaviour
         container.Regist(heroUnit);
         container.Regist(objectPoolMng);
         container.Regist("Assets/Prefab/Enemy.prefab", "EnemyPrefabPath");
+        container.Regist("Assets/Prefab/BossEnemy.prefab", "BossEnemyPrefabPath");
         container.Regist(oneColorMat, "OneColor");
         container.Regist(spriteDefaultMat, "Default");
         container.Regist(new MainObjs()
@@ -60,6 +61,7 @@ public class InGameInstaller : MonoBehaviour
 
 
         objectPoolMng.PrepareObjects("Assets/Prefab/Enemy.prefab");
+        objectPoolMng.PrepareObjects("Assets/Prefab/BossEnemy.prefab");
         objectPoolMng.PrepareObjects("Assets/Prefab/P_DamageFont.prefab");
         container.Regist("Assets/Prefab/P_DamageFont.prefab", "DamageFontPath");
     }

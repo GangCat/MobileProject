@@ -8,6 +8,7 @@ public class GameData :ScriptableObject
     public List<Monster> monsters;
     public List<Stage> stages;
     public List<Skill> skills;
+    public List<BossMonster> bossMonsters;
 
 
     Dictionary<int, Skill> skillDic= new Dictionary<int, Skill>();
