@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using static UnityEngine.Rendering.DebugUI;
 
 namespace DI
@@ -34,7 +35,14 @@ namespace DI
             {
                 return;
             }
-            DIContainer.Inject(o);
+            try
+            {
+                DIContainer.Inject(o);
+            }catch(Exception e)
+            {
+                Debug.LogError("InjectObj Exception " + o.GetType());
+                Debug.LogException(e);
+            }
             isInjected = true;
         }
 
@@ -45,39 +53,50 @@ namespace DI
 
    
     public class DIContainer
-    {
-        // 이건 씬 바뀌어도 사용할 컨테이너
-        static DIContainer _global;
-        public static DIContainer Global=>_global;
-        // 이건 씬마다 사용할 컨테이너
-        public static DIContainer Local { get; set; }
+    {     
+
+        private static List<DIContainer> containerList = new List<DIContainer>();
+
+        public static void AddContainer(DIContainer container)
+        {
+            containerList.Add(container);
+        }
+
+        public static void RemoveContainer(DIContainer container)
+        {
+            containerList.Remove(container);
+        }
+      
 
         // 생성자로 생성
         static DIContainer()
         {
-            _global = new DIContainer();
         }
 
-        public static T GetObj<T>(string key="")
+        public static T GetObjT<T>(string key = "")
         {
-            var diKey = GetKey(typeof(T), key);
-            object value;
-            if (_global.classDictionary.TryGetValue(diKey, out value))
+            return (T)GetObj(typeof(T), key);
+        }
+
+        public static object GetObj(Type type,string key="")
+        {
+            var diKey = GetKey(type, key);
+            object value=null;
+            for (int i = 0; i < containerList.Count; ++i)
             {
-                // 딕셔너리에 해당 키가 있으면 들어옴
-                // 그런데 그 값이 null이면, 예를들어 해당 오브젝트(변수에 들어가야했던)가 파괴되었다면 예외처리
-                if (value == null)
-                    throw new Exception("Unity Object Destroyed");             
-            }
-            // 글로벌에 넣을 값이 없으면 로컬에 넣을 값이 있는지 확인
-            // 이 때 우선 Local이 널인지부터 확인
-            else if (Local != null && Local.classDictionary.TryGetValue(diKey, out value))
-            {
-                if (value == null)
-                    throw new Exception("Unity Object Destroyed");
+                if (containerList[i] != null && containerList[i].classDictionary.TryGetValue(diKey, out value))
+                {
+                    if (value == null)
+                        continue;
+                    break;
+                }
+                
             }
 
-            return (T)value ;
+            if (value == null)
+                throw new Exception(" 등록된 오브젝트를 찾지 못했습니다 Key:"+ diKey);
+
+            return value ;
 
         }
 
@@ -97,39 +116,11 @@ namespace DI
 
                 // 있으면 해당 Inject의 키 가져옴. [Inject("1")]에서 1
                 var key = injectInstance.key;
-                // 가져온 key를 가지고 딕셔너리의 키를 만들어 저장
-                key = GetKey(fi.FieldType, key);
+       
                 // 딕셔너리에서 가져올 값을 저장할 변수
-                object value;
+                object value = GetObj(fi.FieldType, key);
 
-                // 우선 글로벌에 넣을 값을 확인
-                if(_global.classDictionary.TryGetValue(key, out value))
-                {
-                    // 딕셔너리에 해당 키가 있으면 들어옴
-                    // 그런데 그 값이 null이면, 예를들어 해당 오브젝트(변수에 들어가야했던)가 파괴되었다면 예외처리
-                    if(value == null)
-                        throw new Exception("Unity Object Destroyed");
-
-                    // 아니라면 값 설정
-                    fi.SetValue(o, value);
-                }
-                // 글로벌에 넣을 값이 없으면 로컬에 넣을 값이 있는지 확인
-                // 이 때 우선 Local이 널인지부터 확인
-                else if (Local != null && Local.classDictionary.TryGetValue(key, out value))
-                {
-                    if (value == null)
-                        throw new Exception("Unity Object Destroyed");
-
-                    fi.SetValue(o, value);
-                }
-                // 로컬이 null이거나 Type이 Regist되지 않아 저장된 값이 없다면 여기로
-                else
-                {
-                    if(Local == null)
-                        throw new Exception("Local DIContainer Not Instantiated");
-
-                    throw new Exception("Type Not Registered "+key);
-                }
+                fi.SetValue(o, value);
             }
         }
 

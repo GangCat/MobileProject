@@ -65,14 +65,17 @@ public class EnemyUnit : DIMono, IXCollision
 
     }
 
+    public bool IsAlive()
+    {
+        return curHP > 0;
+    }
+
     public void TakeDamage(float _dmg)
     {
         curHP -= _dmg;
         if (curHP <= 0)
         {
             UnitAnim.PlayAni(AniKind.Dead);
-            // Remove하면 배열에서 빠져서 플레이어가 인식하지 않음.
-            MainObjs.EnemyUnits.Remove(this);
         }
 
         //데미지 폰트를 오브젝트 풀링으로 관리하며 데미지 출력

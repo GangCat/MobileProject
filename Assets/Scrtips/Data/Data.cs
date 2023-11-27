@@ -113,7 +113,9 @@ public class Skill
     /// </summary>
     public void Init()
     {
+        Debug.Log("prevIcon:" + _icon);
         _icon = Addressables.LoadAssetAsync<Sprite>(imagePath).WaitForCompletion();
+        Debug.Log("curIcon:" + _icon);
         _icon.name = $"{code}_{name}";
     }
 
@@ -122,6 +124,7 @@ public class Skill
         Addressables.Release<Sprite>(_icon);
         _icon = null;
     }
+
 }
 
 [Serializable]

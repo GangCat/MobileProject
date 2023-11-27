@@ -27,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.08453247, y: 0.32679838, z: -0.013499983}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6149863015008131321}
   m_Father: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   DamageFontPath: 
   maxHP: 0
   curHP: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 8917316708542417120}
   width: 1
   unitVisual: {fileID: 0}
 --- !u!1001 &7997341625684185228
@@ -113,3 +113,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4297823836076148853, guid: dea12f25d62079f43a7c372488633dce, type: 3}
   m_PrefabInstance: {fileID: 7997341625684185228}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8917316708542417120 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1530361421593466988, guid: dea12f25d62079f43a7c372488633dce, type: 3}
+  m_PrefabInstance: {fileID: 7997341625684185228}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4fadff09654e547893c34dbf031f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

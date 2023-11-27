@@ -1,6 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+public class ApplicationQuitEvent
+{
+
+}
 
 public class GameData :ScriptableObject
 {
@@ -30,6 +36,17 @@ public class GameData :ScriptableObject
             s.Init();
             skillDic[s.code] = s;
         }
+        EventBus.Unsubscribe<ApplicationQuitEvent>(OnQuit);
+        EventBus.Subscribe<ApplicationQuitEvent>(OnQuit);
     }
 
+    private void OnQuit(ApplicationQuitEvent obj)
+    {
+        foreach (var s in skills)
+        {
+            s.ReleaseIcon();
+        }
+
+        EventBus.Unsubscribe<ApplicationQuitEvent>(OnQuit);
+    }
 }

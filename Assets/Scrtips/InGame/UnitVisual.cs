@@ -8,6 +8,7 @@ public class UnitVisual : DIMono
 {
     // 매개변수가 딱히 없으면 이렇게해도 됨
     System.Action deathAction;
+    System.Action attackAction;
 
     public Transform damageFontTf,hpBarTf;
     public Vector3 offset;
@@ -39,6 +40,11 @@ public class UnitVisual : DIMono
         deathAction = _deathAction;
     }
 
+    public void SetAttackAction(System.Action _attackAction)
+    {
+        attackAction = _attackAction;
+    }
+
     public void Death()
     {
         deathAction?.Invoke();
@@ -56,5 +62,10 @@ public class UnitVisual : DIMono
     public void SetPosition()
     {
         transform.localPosition = offset;
+    }
+
+    public void AttackHero()
+    {
+        attackAction?.Invoke();
     }
 }

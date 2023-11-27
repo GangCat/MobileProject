@@ -155,87 +155,87 @@ MonoBehaviour:
     name: "\uC232-1"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 2
     name: "\uC232-2"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 3
     name: "\uC232-3"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 4
     name: "\uC232-4"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 5
     name: "\uC232-5"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 6
     name: "\uC232-6"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 7
     name: "\uC232-7"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 8
     name: "\uC232-8"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 9
     name: "\uC232-9"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 10
     name: "\uC232-10"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 11
     name: "\uC232-11"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 12
     name: "\uC232-12"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 13
     name: "\uC232-13"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 14
     name: "\uC232-14"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 15
     name: "\uC232-15"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 16
     name: "\uC232-16"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   - code: 17
     name: "\uC232-17"
     monsters:
       values: 0100000002000000
-    bossCode: 1
+    bossCode: 101
   skills:
   - code: 1
     name: Explosion
@@ -256,21 +256,21 @@ MonoBehaviour:
     imagePath: UI/1-bit 16px icons part-1 outlines[FireBallSkill]
     fxPrerfabPath: Assets/Prefab/Skill/P_SkillFireBall.prefab
   bossMonsters:
-  - code: 1
+  - code: 100
     name: FlyingHead
     path: Assets/Prefab/Monster/FlyingHead.prefab
     damage: 100
     health: 700
-    attackRate: 3
-  - code: 2
+    attackRate: 2
+  - code: 101
     name: FlyingHead
     path: Assets/Prefab/Monster/FlyingHead.prefab
     damage: 100
     health: 700
-    attackRate: 3
-  - code: 3
+    attackRate: 2
+  - code: 201
     name: FlyingHead
     path: Assets/Prefab/Monster/FlyingHead.prefab
     damage: 100
     health: 700
-    attackRate: 3
+    attackRate: 2

@@ -33,7 +33,7 @@ public class SkillIcon : DIMono
     {
         //Addressables.Release(skill.IconImage);
         //iconImage.sprite = null;
-        skill.ReleaseIcon();
+       // skill.ReleaseIcon();
         //Destroy(iconImage.gameObject);
     }
 }

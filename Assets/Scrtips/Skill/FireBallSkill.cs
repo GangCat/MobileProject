@@ -6,12 +6,11 @@ using UnityEngine;
 public class FireBallSkill : SkillBase
 {
     public float moveSpeed;
-    List<IXCollision> collisedObjs;
+    List<IXCollision> collisedObjs = new List<IXCollision>();
 
     public override void Init()
     {
         base.Init();
-        collisedObjs = new List<IXCollision>();
     }
 
     protected override void Update()

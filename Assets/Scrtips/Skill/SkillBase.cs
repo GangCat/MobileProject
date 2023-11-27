@@ -51,6 +51,7 @@ public class SkillBase : DIMono, IXCollision
     {
         if (!particle.isPlaying)
             gameObject.SetActive(false);
+
     }
 
     protected virtual IEnumerator ActivateSkillCoroutine()
@@ -61,11 +62,16 @@ public class SkillBase : DIMono, IXCollision
 
         while (curAttackCnt < attackCount)
         {
-            foreach (var enemy in mainObjs.EnemyUnits)
+            for(int i = 0; i < mainObjs.EnemyUnits.Count; ++i)
             {
+                var enemy = mainObjs.EnemyUnits[i];
                 if (x.IsCollide(enemy))
                     enemy.TakeDamage(dmg);
+                
             }
+
+
+          
             ++curAttackCnt;
             yield return waitAttackDelay;
         }

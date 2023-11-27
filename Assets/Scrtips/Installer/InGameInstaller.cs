@@ -23,12 +23,13 @@ public class InGameInstaller : MonoBehaviour
 
     public List<SkillCodeAndLv> initSkillCodes;
 
+    DIContainer container;
     private void Awake()
     {
         // 먼저 로컬로 쓸 컨테이너 생성
-        var container = new DIContainer(); 
+        container = new DIContainer();
         // 로컬로 지정
-        DIContainer.Local = container;
+        DIContainer.AddContainer(container);
         // 컨테이너에 로컬에서 필요한 내용 등록
         // 이때 좌측이 값, 우측이 키이며 키가 없어도 된다.
         // 하지만 자료형이 같으면 키가 필요하다.
@@ -45,7 +46,7 @@ public class InGameInstaller : MonoBehaviour
             EnemyUnits= new List<EnemyUnit>()
         });
 
-        var userdata=DIContainer.GetObj<UserData>();
+        var userdata=DIContainer.GetObjT<UserData>();
 
         userdata.skillCodePerLv.Clear();
         userdata.equippedSkillCodes.Clear();
@@ -64,5 +65,10 @@ public class InGameInstaller : MonoBehaviour
         objectPoolMng.PrepareObjects("Assets/Prefab/BossEnemy.prefab");
         objectPoolMng.PrepareObjects("Assets/Prefab/P_DamageFont.prefab");
         container.Regist("Assets/Prefab/P_DamageFont.prefab", "DamageFontPath");
+    }
+
+    private void OnDestroy()
+    {
+        DIContainer.RemoveContainer(container);
     }
 }

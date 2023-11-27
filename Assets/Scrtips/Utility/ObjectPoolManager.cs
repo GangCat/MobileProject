@@ -67,10 +67,13 @@ public class ObjectPoolManager :MonoBehaviour
     public void OnDestroy()
     {
         // 파괴시 모두 해제
+        ReleasePoolObjects();
+    }
+
+    public void ReleasePoolObjects()
+    {
         foreach (ObjectPool op in assetPathToObjectPool.Values)
             Addressables.Release(op.PoolObject);
     }
-
-
 
 }

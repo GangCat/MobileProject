@@ -4,6 +4,7 @@ using UnityEngine;
 using DI;
 using System.IO;
 using UnityEngine.AddressableAssets;
+using System;
 
 public class SkillManager : DIMono
 {
@@ -25,6 +26,27 @@ public class SkillManager : DIMono
     public Dictionary<int, GameObject> skillCodeToGameObject = new Dictionary<int, GameObject>();
     public Dictionary<int, Vector3> skillCodeToSkillOffset = new Dictionary<int, Vector3>();
 
+
+    private void OnEnable()
+    {
+        EventBus.Subscribe<SceneChangeEvent>(OnSceneChangeHandler);
+        
+    }
+    private void OnDisable()
+    {
+        EventBus.Unsubscribe<SceneChangeEvent>(OnSceneChangeHandler);
+    }
+
+
+    private void OnSceneChangeHandler(SceneChangeEvent obj)
+    {
+        OnDestroy();
+        Init();
+    }
+
+
+
+
     public SkillIcon GetSkillBtn(int index)
     {
         while ( index >= skillBtnParentTf.childCount)
@@ -40,8 +62,11 @@ public class SkillManager : DIMono
     public override void Init()
     {
         int idx = 0;
-        
-        for(idx=0;idx<userData.equippedSkillCodes.Count;idx++)
+
+        skillCodeToSkillOffset.Clear();
+        skillCodeToGameObject.Clear();
+
+        for (idx=0;idx<userData.equippedSkillCodes.Count;idx++)
         {
             var skCode = userData.equippedSkillCodes[idx];
             var skill = gameData.GetSkill(skCode);

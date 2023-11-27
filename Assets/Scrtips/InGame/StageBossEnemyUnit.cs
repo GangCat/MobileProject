@@ -10,7 +10,9 @@ public class StageBossEnemyUnit : EnemyUnit
 
     float attackRate;
     float damage;
+    float lastAttackTime;
     bool isAttack;
+
 
     public override void Init()
     {
@@ -26,6 +28,7 @@ public class StageBossEnemyUnit : EnemyUnit
 
         unitVisual = poolManager.GetObject(mobData.path).GetComponent<UnitVisual>();
         unitVisual.SetDeathAction(ReturnToPool);
+        unitVisual.SetAttackAction(AttackHero);
         healthBar.transform.localPosition = unitVisual.hpBarTf.localPosition;
         UnitAnim.SetAnimator(unitVisual.GetComponent<Animator>());
 
@@ -44,22 +47,28 @@ public class StageBossEnemyUnit : EnemyUnit
 
     private IEnumerator AutoAttackCoroutine()
     {
-        float lastAttackTime = 0f;
+        lastAttackTime = 0f;
         while (true)
         {
-            
-            if(Vector3.SqrMagnitude(MainObjs.HeroUnit.transform.position - transform.position) > Mathf.Pow(0.1f, 2f))
+            if(curHP <= 0)
+            {
+                UnitAnim.PlayAni(AniKind.Dead);
+                yield break;
+            }
+
+            // 공격범위 기즈모 만들기
+            if(Vector3.SqrMagnitude(MainObjs.HeroUnit.transform.position - transform.position) > 1)
             {
                 yield return wait;
                 continue;
             }
 
-            if(Time.time - lastAttackTime > attackRate)
+            if(isAttack==false && Time.time - lastAttackTime > attackRate)
             {
                 //공격 애니메이션 재생
                 UnitAnim.PlayAni(AniKind.Attack);
+                Debug.Log("Attack");
                 isAttack = true;
-                lastAttackTime = Time.time;
             }
             else if(!isAttack)
             {
@@ -72,6 +81,9 @@ public class StageBossEnemyUnit : EnemyUnit
 
     public void AttackHero()
     {
+        Debug.Log("AttackHero");
+
+        lastAttackTime = Time.time;
         if (MainObjs.HeroUnit == null)
         {
             isAttack = false;
