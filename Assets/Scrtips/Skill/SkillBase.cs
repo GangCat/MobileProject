@@ -19,6 +19,9 @@ public class SkillBase : DIMono, IXCollision
 
     protected WaitForSeconds waitAttackDelay;
 
+    /// <summary>
+    /// 충돌검사를 위해 중심점과 x축 길이를 정함.
+    /// </summary>
     public float CenterX => transform.position.x;
     public float Width => width;
 
@@ -39,12 +42,10 @@ public class SkillBase : DIMono, IXCollision
         coolTime = _cooltime;
     }
 
-
     protected virtual void OnEnable()
     {
         CheckAndInject();
         StartCoroutine(ActivateSkillCoroutine());
-        //ActivateSkill();
     }
 
     protected virtual void Update()
@@ -54,12 +55,14 @@ public class SkillBase : DIMono, IXCollision
 
     }
 
+    // 스킬 사용시 아래와 같이 검사.
     protected virtual IEnumerator ActivateSkillCoroutine()
     {
         particle.Play();
         var x = this as IXCollision;
         int curAttackCnt = 0;
 
+        // 다단히트의 경우 처리
         while (curAttackCnt < attackCount)
         {
             for(int i = 0; i < mainObjs.EnemyUnits.Count; ++i)
@@ -67,15 +70,10 @@ public class SkillBase : DIMono, IXCollision
                 var enemy = mainObjs.EnemyUnits[i];
                 if (x.IsCollide(enemy))
                     enemy.TakeDamage(dmg);
-                
             }
-
-
           
             ++curAttackCnt;
             yield return waitAttackDelay;
         }
-        
-
     }
 }

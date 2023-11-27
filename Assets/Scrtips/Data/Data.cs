@@ -68,7 +68,9 @@ public class Stage
     public string name;
 
     public IntList monsters;
+    // 스테이지 정예몹
     public int eliteMonsterCode;
+    // 스테이지 보스몹
     public int bossCode;
     List<Monster> _monsterList;
     public List<Monster> Monsters

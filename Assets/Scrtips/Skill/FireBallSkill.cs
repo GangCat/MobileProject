@@ -24,6 +24,11 @@ public class FireBallSkill : SkillBase
         collisedObjs.Clear();
     }
 
+    /// <summary>
+    /// 파이어볼의 경우 한 번 공격한 대상은 공격하지 않기 위해 공격한 적들을 리스트에 넣음.
+    /// 그리고 그 리스트는 비활성화될 때 초기화시킴.
+    /// </summary>
+    /// <returns></returns>
     protected override IEnumerator ActivateSkillCoroutine()
     {
         particle.Play();

@@ -44,11 +44,13 @@ public class SkillManager : DIMono
         OnDestroy();
         Init();
     }
-
-
-
-
-    public SkillIcon GetSkillBtn(int index)
+    
+    /// <summary>
+    /// 해당 인덱스에 위치하는 스킬 아이콘에 스프라이트를 적용해주기 위해 스킬아이콘 클래스를 찾는 함수.
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
+    public SkillIcon GetSkillIcon(int index)
     {
         while ( index >= skillBtnParentTf.childCount)
         {
@@ -84,20 +86,24 @@ public class SkillManager : DIMono
             skillCodeToSkillOffset[skCode] = skObj.transform.position;
             skillCodeToGameObject[skCode] = skObj;
             LeftSkillCooltime[skCode] = skill.coolTime;
-            GetSkillBtn(idx).SetData(skill);
+            GetSkillIcon(idx).SetData(skill);
         }
     }
 
     private void Update()
     {
+        // 모든 장착중인 스킬 순회
         foreach (var skCode in userData.equippedSkillCodes)
         {
+            // 공격중이며 쿨타임이 되었을 때
             if (LeftSkillCooltime[skCode] <= 0 && mainObjs.HeroUnit.isAttack)
             {
                 skillCodeToGameObject[skCode].transform.position = mainObjs.HeroUnit.transform.position + skillCodeToSkillOffset[skCode];
                 skillCodeToGameObject[skCode].SetActive(true);
                 LeftSkillCooltime[skCode] = gameData.GetSkill(skCode).coolTime;
 
+                // 추후에 스킬 사용시 다른 스킬 쿨타임 0인것들 다 0.5초? 정도 늘어나도록 해주기.
+                // 한 번에 모든 스킬을 사용하지 못하게 하기 위함.
                 continue;
             }
             LeftSkillCooltime[skCode] -= Time.deltaTime;

@@ -37,16 +37,20 @@ public class StageManager : DIMono
     }
 
     // 페이드인, 아웃
-    void FadeIn()
-    {
-        StartCoroutine(FadeAlphaChange(1f, 0f));
-    }
+    //void FadeIn()
+    //{
+    //    StartCoroutine(FadeAlphaChange(1f, 0f));
+    //}
 
-    void FadeOut()
-    {
-        StartCoroutine(FadeAlphaChange(0f, 1f));
-    }
+    //void FadeOut()
+    //{
+    //    StartCoroutine(FadeAlphaChange(0f, 1f));
+    //}
 
+    /// <summary>
+    /// 어플리케이션 종료시 호출되는 함수.
+    /// 이 타이밍에 해제 등 하면 좋을듯
+    /// </summary>
     void OnApplicationQuit()
     {
         Debug.Log("OnApplicationQuit");
@@ -61,6 +65,9 @@ public class StageManager : DIMono
 
     public void ChangeToNextStage(ChangeToNextStage _obj)
     {
+        // 다음 스테이지를 찾아냄.
+        // 지금은 1, 2, 3 처럼되서 +1로 찾으면 됨.
+        // 나중에 101, 102로 해야 함.
         var nextStage = gameData.stages.Find(l => l.code == playData.currentStage.code + 1);
         StartCoroutine(ChangeSceneProcessCoroutine(nextStage));
     }
@@ -72,27 +79,24 @@ public class StageManager : DIMono
 
     IEnumerator ChangeSceneProcessCoroutine(Stage _stage, bool _isBossStage = false)
     {
+        // 페이드 인 대기
         yield return FadeAlphaChange(0,1);
         AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync("GameScene");
 
-        // 비동기 작업이 완료될 때까지 기다립니다.
+        // 비동기 작업이 완료될 때까지 대기.
         while (!unloadOperation.isDone)
-        {
-            yield return null; // 한 프레임을 기다립니다.
-        }
+            yield return null;
 
         playData.currentStage = _stage;
         playData.isBossStage = _isBossStage;
 
         var loadOperation = SceneManager.LoadSceneAsync("GameScene", LoadSceneMode.Additive);
 
-        // 비동기 작업이 완료될 때까지 기다립니다.
+        // 비동기 작업이 완료될 때까지 대기.
         while (!loadOperation.isDone)
-        {
-            yield return null; // 한 프레임을 기다립니다.
-        }
+            yield return null;
 
-
+        // 페이드 아웃 대기
         yield return FadeAlphaChange(1, 0);
     }
 

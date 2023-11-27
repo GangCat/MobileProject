@@ -5,7 +5,9 @@ using static UnitAnim;
 
 public class EliteAndBossEnemyUnit : EnemyUnit
 {
-    BossMonster bossMobData;
+    // 보스나 엘리트의 경우 다른것보다 크기가 달라서 다르게 만듬.
+    // 그리고 공격도 하기 때문에 확장하는게 더 나을 것이라 판단.
+    // 나중에 보스나 엘리트만 템을 떨구게 할 생각. 재료같은거?
     WaitForSeconds wait;
 
     float attackRate;
@@ -24,7 +26,6 @@ public class EliteAndBossEnemyUnit : EnemyUnit
     protected internal void SetData(BossMonster mobData)
     {
         CheckAndInject();
-        this.bossMobData = mobData;
 
         unitVisual = poolManager.GetObject(mobData.path).GetComponent<UnitVisual>();
         unitVisual.SetDeathAction(ReturnToPool);

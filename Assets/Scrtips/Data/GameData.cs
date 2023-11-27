@@ -3,28 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ApplicationQuitEvent
-{
-
-}
-
-public class ChallangeToBossStage
-{
-
-}
-
-public class RestartCurrentStage
-{
-
-}
-
-public class ChangeToNextStage
-{
-
-}
+/// <summary>
+/// 어플리케이션 종료시 호출
+/// </summary>
+public class ApplicationQuitEvent { }
+/// <summary>
+/// 보스 스테이지로 이동
+/// </summary>
+public class ChallangeToBossStage { }
+/// <summary>
+/// 현재 스테이지 재시작
+/// </summary>
+public class RestartCurrentStage { }
+/// <summary>
+/// 다음 스테이지로 이동
+/// </summary>
+public class ChangeToNextStage { }
 
 public class GameData :ScriptableObject
 {
+    // 각종 정보들 저장.
     public List<Item> items;
     public List<Monster> monsters;
     public List<Stage> stages;

@@ -53,6 +53,11 @@ public class EnemyUnitManager : DIMono
         SpawnEliteEnemy();
     }
 
+    /// <summary>
+    /// 보스만 소환할 때 호출
+    /// 저 오브젝트 풀도 보스꺼만 만들면 됨.
+    /// 추후에 수정할 것
+    /// </summary>
     void PrepareBossStage()
     {
         foreach (var mob in playdata.currentStage.Monsters)
@@ -63,6 +68,9 @@ public class EnemyUnitManager : DIMono
         SpawnBossEnemy();
     }
 
+    /// <summary>
+    /// 스테이지 기본 몬스터 스폰
+    /// </summary>
     public void SpawnEnemy()
     {
         var curStage = playdata.currentStage;
@@ -83,6 +91,9 @@ public class EnemyUnitManager : DIMono
         }
     }
 
+    /// <summary>
+    /// 스테이지 정예 몬스터 스폰
+    /// </summary>
     public void SpawnEliteEnemy()
     {
         var curStage = playdata.currentStage;
@@ -98,6 +109,9 @@ public class EnemyUnitManager : DIMono
         EnemyUnits.Add(stageBossUnit);
     }
 
+    /// <summary>
+    /// 스테이지 보스 스폰
+    /// </summary>
     public void SpawnBossEnemy()
     {
         var curStage = playdata.currentStage;

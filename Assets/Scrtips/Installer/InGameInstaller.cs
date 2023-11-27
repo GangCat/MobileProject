@@ -59,8 +59,7 @@ public class InGameInstaller : MonoBehaviour
             }
         }
 
-
-
+        // 미리 오브젝트 풀링을 생성.
         objectPoolMng.PrepareObjects("Assets/Prefab/Enemy.prefab");
         objectPoolMng.PrepareObjects("Assets/Prefab/BossEnemy.prefab");
         objectPoolMng.PrepareObjects("Assets/Prefab/P_DamageFont.prefab");

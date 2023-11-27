@@ -11,8 +11,10 @@ using static UnityEngine.Rendering.DebugUI;
 
 namespace DI
 {
-
-
+    /// <summary>
+    /// [Inject("키")]에서 키를 설정할 수 있음. 
+    /// 같은 GameObject를 받아야할 때 키로 구분 가능.
+    /// </summary>
     public class InjectAttribute : Attribute
     {
         public readonly string key;
@@ -22,7 +24,6 @@ namespace DI
         }
 
     }
-
 
     public class InjectObj
     {
@@ -48,13 +49,9 @@ namespace DI
 
     }
 
-    
-
-
-   
     public class DIContainer
     {     
-
+        // 컨테이너를 리스트로 관리하면 글로벌이 딱히 없어도 리스트[0]을 파괴안하면 글로벌이나 마찬가지임.
         private static List<DIContainer> containerList = new List<DIContainer>();
 
         public static void AddContainer(DIContainer container)
@@ -78,6 +75,14 @@ namespace DI
             return (T)GetObj(typeof(T), key);
         }
 
+        /// <summary>
+        /// 컨테이너에 저장된 오브젝트를 타입과 키 값을 가지고 찾아냄.
+        /// 모든 컨테이너를 순회하며 찾아냄
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static object GetObj(Type type,string key="")
         {
             var diKey = GetKey(type, key);

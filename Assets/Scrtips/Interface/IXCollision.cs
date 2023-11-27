@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IXCollision
 {
-    // 충돌 검사하는 함수
+    // x축 요소만 가지고 충돌 검사하는 함수
     public bool IsCollide(IXCollision target)
     {
         var dist = Mathf.Abs(CenterX - target.CenterX);

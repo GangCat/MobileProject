@@ -35,11 +35,19 @@ public class UnitVisual : DIMono
         }
     }
 
+    /// <summary>
+    /// 사망시 호출할 함수 등록
+    /// </summary>
+    /// <param name="_deathAction"></param>
     public void SetDeathAction(System.Action _deathAction)
     {
         deathAction = _deathAction;
     }
 
+    /// <summary>
+    /// 공격시 호출할 함수 등록
+    /// </summary>
+    /// <param name="_attackAction"></param>
     public void SetAttackAction(System.Action _attackAction)
     {
         attackAction = _attackAction;
@@ -50,6 +58,15 @@ public class UnitVisual : DIMono
         deathAction?.Invoke();
     }
 
+    public void AttackHero()
+    {
+        attackAction?.Invoke();
+    }
+
+    /// <summary>
+    /// 피격시 몸이 번쩍하는 효과
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator DamageFx()
     {
         SpriteRenderer.sharedMaterial = oneColorMat;
@@ -59,13 +76,13 @@ public class UnitVisual : DIMono
         SpriteRenderer.sharedMaterial = defaultMat;
     }
 
+    /// <summary>
+    /// 자신의 오프셋으로 자신의 위치 조정
+    /// </summary>
     public void SetPosition()
     {
         transform.localPosition = offset;
     }
 
-    public void AttackHero()
-    {
-        attackAction?.Invoke();
-    }
+
 }
