@@ -9,6 +9,7 @@ public class PlayData
 
     public Dictionary<int, float> leftCooltimes =new Dictionary<int, float>();
 
+    public bool isBossStage;
 }
 /// <summary>
 /// 여러 장소에서 접근하기 위한 클래스

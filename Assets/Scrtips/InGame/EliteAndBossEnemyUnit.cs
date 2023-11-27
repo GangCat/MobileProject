@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnitAnim;
 
-public class StageBossEnemyUnit : EnemyUnit
+public class EliteAndBossEnemyUnit : EnemyUnit
 {
     BossMonster bossMobData;
     WaitForSeconds wait;

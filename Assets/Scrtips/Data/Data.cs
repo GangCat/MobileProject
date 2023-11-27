@@ -68,6 +68,7 @@ public class Stage
     public string name;
 
     public IntList monsters;
+    public int eliteMonsterCode;
     public int bossCode;
     List<Monster> _monsterList;
     public List<Monster> Monsters

@@ -35,6 +35,10 @@ public class StageManager : DIMono
             var nextStage = gameData.stages.Find(l => l.code == playData.currentStage.code + 1);
             StartCoroutine(ChangeSceneProcessCoroutine(nextStage));
         }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            StartCoroutine(ChangeSceneProcessCoroutine(playData.currentStage, true));
+        }
     }
 
     // 페이드인, 아웃
@@ -52,9 +56,10 @@ public class StageManager : DIMono
     {
         Debug.Log("OnApplicationQuit");
         EventBus.Publish(new ApplicationQuitEvent());
+        //EventBus.Subscribe<EnterToBossStage>();
     }
 
-    IEnumerator ChangeSceneProcessCoroutine(Stage _stage)
+    IEnumerator ChangeSceneProcessCoroutine(Stage _stage, bool _isBossStage = false)
     {
         yield return FadeAlphaChange(0,1);
         AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync("GameScene");
@@ -66,6 +71,7 @@ public class StageManager : DIMono
         }
 
         playData.currentStage = _stage;
+        playData.isBossStage = _isBossStage;
 
         var loadOperation = SceneManager.LoadSceneAsync("GameScene", LoadSceneMode.Additive);
 

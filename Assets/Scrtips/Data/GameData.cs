@@ -8,6 +8,16 @@ public class ApplicationQuitEvent
 
 }
 
+public class EnterToBossStage
+{
+
+}
+
+public class RestartCurrentStage
+{
+
+}
+
 public class GameData :ScriptableObject
 {
     public List<Item> items;

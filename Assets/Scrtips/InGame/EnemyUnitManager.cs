@@ -29,10 +29,17 @@ public class EnemyUnitManager : DIMono
     public float enemyOffset;
     public float enemystatPosOffset;
     public float bossSpawnOffset;
+
+    bool isRestartStage;
+    GameObject bossEnemyGo;
     
     public override void Init()
     {
-        PrepareStage();
+        isRestartStage = false;
+        if (playdata.isBossStage)
+            PrepareBossStage();
+        else
+            PrepareStage();
     }
 
     void PrepareStage()
@@ -43,11 +50,16 @@ public class EnemyUnitManager : DIMono
         }
 
         SpawnEnemy();
-        SpawnStageBossEnemy();
+        SpawnEliteEnemy();
     }
 
     void PrepareBossStage()
     {
+        foreach (var mob in playdata.currentStage.Monsters)
+        {
+            objectPoolMng.PrepareObjects(mob.path);
+        }
+
         SpawnBossEnemy();
     }
 
@@ -71,28 +83,49 @@ public class EnemyUnitManager : DIMono
         }
     }
 
-    public void SpawnStageBossEnemy()
+    public void SpawnEliteEnemy()
     {
         var curStage = playdata.currentStage;
 
-        var mobData = gameData.bossMonsters.Find(l=>l.code==curStage.bossCode);
+        var mobData = gameData.bossMonsters.Find(l=>l.code==curStage.eliteMonsterCode);
         var mobPath = mobData.path;
 
         GameObject stageBossGo = objectPoolMng.GetObject(BossEnemyUnitPath);
         stageBossGo.transform.position = mainObjs.HeroUnit.transform.position + new Vector3(bossSpawnOffset, 0);
 
-        var stageBossUnit = stageBossGo.GetComponent<StageBossEnemyUnit>();
+        var stageBossUnit = stageBossGo.GetComponent<EliteAndBossEnemyUnit>();
         stageBossUnit.SetData(mobData);
         EnemyUnits.Add(stageBossUnit);
     }
 
     public void SpawnBossEnemy()
     {
+        var curStage = playdata.currentStage;
 
+        var mobData = gameData.bossMonsters.Find(l => l.code == curStage.bossCode);
+        var mobPath = mobData.path;
+
+        GameObject stageBossGo = objectPoolMng.GetObject(BossEnemyUnitPath);
+        stageBossGo.transform.position = mainObjs.HeroUnit.transform.position + new Vector3(bossSpawnOffset, 0);
+
+        var stageBossUnit = stageBossGo.GetComponent<EliteAndBossEnemyUnit>();
+        stageBossUnit.SetData(mobData);
+        EnemyUnits.Add(stageBossUnit);
     }
 
     public void Update()
     {
+        if (isRestartStage)
+            return;
+
+        if (mainObjs.EnemyUnits.Count < 1)
+        {
+            isRestartStage = true;
+            EventBus.Publish(new RestartCurrentStage());
+            return;
+        }
+
+
         for(int i=mainObjs.EnemyUnits.Count - 1;i>= 0; --i)
         {
             var enemy = mainObjs.EnemyUnits[i];
@@ -102,5 +135,4 @@ public class EnemyUnitManager : DIMono
             mainObjs.EnemyUnits.Remove(enemy);
         }
     }
-
 }
