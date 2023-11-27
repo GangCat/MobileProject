@@ -121,7 +121,10 @@ public class EnemyUnitManager : DIMono
         if (mainObjs.EnemyUnits.Count < 1)
         {
             isRestartStage = true;
-            EventBus.Publish(new RestartCurrentStage());
+            if (playdata.isBossStage)
+                EventBus.Publish(new ChangeToNextStage());
+            else
+                EventBus.Publish(new RestartCurrentStage());
             return;
         }
 

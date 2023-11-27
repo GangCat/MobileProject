@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6383a271d4f9d604595256da11293b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 80
   curHP: 0
   maxHP: 3000
   isAttack: 0
@@ -2119,6 +2119,7 @@ GameObject:
   - component: {fileID: 1174075969}
   - component: {fileID: 1174075968}
   - component: {fileID: 1174075967}
+  - component: {fileID: 1174075970}
   m_Layer: 5
   m_Name: Button_BossStage
   m_TagString: Untagged
@@ -2228,6 +2229,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174075965}
   m_CullTransparentMesh: 1
+--- !u!114 &1174075970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174075965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de2952e3137436848bd3db360cf590d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btn: {fileID: 1174075967}
 --- !u!1 &1176391463
 GameObject:
   m_ObjectHideFlags: 0

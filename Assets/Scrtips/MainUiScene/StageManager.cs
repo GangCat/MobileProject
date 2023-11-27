@@ -26,8 +26,9 @@ public class StageManager : DIMono
     public override void Init()
     {
         SceneManager.LoadScene("GameScene", LoadSceneMode.Additive);
-        EventBus.Subscribe<EnterToBossStage>(ChangeToBossStage);
-        EventBus.Subscribe<RestartCurrentStage>(ChangeToNextStage);
+        EventBus.Subscribe<ChallangeToBossStage>(ChangeToBossStage);
+        EventBus.Subscribe<RestartCurrentStage>(RestartCurrentStage);
+        EventBus.Subscribe<ChangeToNextStage>(ChangeToNextStage);
     }
 
     private void Update()
@@ -61,15 +62,20 @@ public class StageManager : DIMono
         //EventBus.Subscribe<EnterToBossStage>();
     }
 
-    public void ChangeToBossStage(EnterToBossStage _obj)
+    public void ChangeToBossStage(ChallangeToBossStage _obj)
     {
         StartCoroutine(ChangeSceneProcessCoroutine(playData.currentStage, true));
     }
 
-    public void ChangeToNextStage(RestartCurrentStage _obj)
+    public void ChangeToNextStage(ChangeToNextStage _obj)
     {
         var nextStage = gameData.stages.Find(l => l.code == playData.currentStage.code + 1);
         StartCoroutine(ChangeSceneProcessCoroutine(nextStage));
+    }
+
+    public void RestartCurrentStage(RestartCurrentStage _obj)
+    {
+        StartCoroutine(ChangeSceneProcessCoroutine(playData.currentStage));
     }
 
     IEnumerator ChangeSceneProcessCoroutine(Stage _stage, bool _isBossStage = false)
@@ -123,6 +129,8 @@ public class StageManager : DIMono
 
     private void OnDestroy()
     {
-        EventBus.Unsubscribe<EnterToBossStage>(ChangeToBossStage);
+        EventBus.Unsubscribe<ChallangeToBossStage>(ChangeToBossStage);
+        EventBus.Unsubscribe<RestartCurrentStage>(RestartCurrentStage);
+        EventBus.Unsubscribe<ChangeToNextStage>(ChangeToNextStage);
     }
 }

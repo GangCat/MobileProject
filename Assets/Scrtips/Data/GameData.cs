@@ -8,12 +8,17 @@ public class ApplicationQuitEvent
 
 }
 
-public class EnterToBossStage
+public class ChallangeToBossStage
 {
 
 }
 
 public class RestartCurrentStage
+{
+
+}
+
+public class ChangeToNextStage
 {
 
 }
