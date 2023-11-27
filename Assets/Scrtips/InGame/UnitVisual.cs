@@ -10,6 +10,7 @@ public class UnitVisual : DIMono
     System.Action deathAction;
 
     public Transform damageFontTf,hpBarTf;
+    public Vector3 offset;
 
     [Inject("Default")]
     Material defaultMat;
@@ -50,5 +51,10 @@ public class UnitVisual : DIMono
         yield return flashSec;
         SpriteRenderer.color = Color.white;
         SpriteRenderer.sharedMaterial = defaultMat;
+    }
+
+    public void SetPosition()
+    {
+        transform.localPosition = offset;
     }
 }

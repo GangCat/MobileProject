@@ -54,12 +54,13 @@ public class EnemyUnitManager : DIMono
             var mobPath = mobData.path;
             
             GameObject enemyGo = objectPoolMng.GetObject(EnemyUnitPath);
+            enemyGo.transform.position = mainObjs.HeroUnit.transform.position + new Vector3((i * enemyOffset) + enemystatPosOffset, 0);
+
             var enemyUnit = enemyGo.GetComponent<EnemyUnit>();
             enemyUnit.SetData(mobData);
             EnemyUnits.Add(enemyUnit);
 
             // 여기서 * 2가 간격, + 10이 거리 오프셋
-            enemyGo.transform.position = mainObjs.HeroUnit.transform.position + new Vector3((i * enemyOffset) + enemystatPosOffset, 0);
         }
     }
 

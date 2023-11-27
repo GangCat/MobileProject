@@ -62,6 +62,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d4f9229fe938e742999aa8a7d4373ea
+    m_Address: Assets/Prefab/Monster/FlyingHead.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9746b18769b7e7444b7afad05742ec27, type: 2}
   m_SchemaSet:

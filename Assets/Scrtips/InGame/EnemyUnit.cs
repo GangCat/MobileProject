@@ -58,7 +58,8 @@ public class EnemyUnit : DIMono, IXCollision
         UnitAnim.SetAnimator(unitVisual.GetComponent<Animator>());
 
         unitVisual.transform.SetParent(this.transform);
-        unitVisual.transform.localPosition = Vector3.zero;
+        unitVisual.SetPosition();
+        //unitVisual.transform.localPosition = Vector3.zero;
 
         maxHP = mobData.health;
         curHP = maxHP;

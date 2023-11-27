@@ -143,18 +143,18 @@ MonoBehaviour:
       max: 0
   monsters:
   - code: 1
-    name: w
+    name: RedAxeDemon
     path: Assets/Prefab/Monster/RedAx.prefab
-    health: 100
+    health: 200
   - code: 2
-    name: e
-    path: 
+    name: FlyingHead
+    path: Assets/Prefab/Monster/FlyingHead.prefab
     health: 100
   stages:
   - code: 1
     name: "\uC232-1"
     monsters:
-      values: 01000000
+      values: 0100000002000000
   skills:
   - code: 1
     name: Explosion
