@@ -9,6 +9,7 @@ public class HeroUnit : DIMono
     public float damage;
     public float HP;
     public float maxHP;
+    public bool isAttack;
 
     [Inject]
     MainObjs MainObjs;
@@ -44,12 +45,14 @@ public class HeroUnit : DIMono
             return;
         }
 
+        isAttack = true;
         unitAnim.PlayAni(AniKind.Attack);
     }
 
 
     private void HeroWalk()
     {
+        isAttack = false;
         unitAnim.PlayAni(AniKind.Walk);
         if(!unitAnim.IsAttack)
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;

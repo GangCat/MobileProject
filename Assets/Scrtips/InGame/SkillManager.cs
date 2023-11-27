@@ -60,7 +60,7 @@ public class SkillManager : DIMono
     {
         foreach (var skCode in userData.equippedSkillCodes)
         {
-            if (LeftSkillCooltime[skCode] <= 0)
+            if (LeftSkillCooltime[skCode] <= 0 && mainObjs.HeroUnit.isAttack)
             {
                 skillCodeToGameObject[skCode].transform.position = mainObjs.HeroUnit.transform.position + skillCodeToSkillOffset[skCode];
                 skillCodeToGameObject[skCode].SetActive(true);
@@ -68,7 +68,6 @@ public class SkillManager : DIMono
                 continue;
             }
             LeftSkillCooltime[skCode] -= Time.deltaTime;
-
         }
     }
 
@@ -77,7 +76,4 @@ public class SkillManager : DIMono
         foreach (var skillObj in skillCodeToGameObject.Values)
             Addressables.Release(skillObj);
     }
-
-
-
 }
