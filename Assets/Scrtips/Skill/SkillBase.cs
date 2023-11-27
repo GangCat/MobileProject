@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using DI;
 
-public class EffectExplosion : DIMono, IXCollision
+public class SkillBase : DIMono, IXCollision
 {
     [Inject]
-    MainObjs mainObjs;
+    protected MainObjs mainObjs;
 
     [Range(0.1f,6)]
     public float width;
@@ -17,12 +17,12 @@ public class EffectExplosion : DIMono, IXCollision
 
     public ParticleSystem particle;
 
-    WaitForSeconds waitSkillDelay;
+    protected WaitForSeconds waitSkillDelay;
 
     public float CenterX => transform.position.x;
     public float Width => width;
 
-    private void OnDrawGizmosSelected()
+    protected void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(this.transform.position, new Vector3(Width, 1));
@@ -33,21 +33,27 @@ public class EffectExplosion : DIMono, IXCollision
         waitSkillDelay = new WaitForSeconds(attackDelay);
     }
 
+    public void SetData(float _dmg, float _cooltime)
+    {
+        dmg = _dmg;
+        coolTime = _cooltime;
+    }
 
-    private void OnEnable()
+
+    protected virtual void OnEnable()
     {
         CheckAndInject();
         StartCoroutine(ActivateSkillCoroutine());
         //ActivateSkill();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (!particle.isPlaying)
             gameObject.SetActive(false);
     }
 
-    private IEnumerator ActivateSkillCoroutine()
+    protected virtual IEnumerator ActivateSkillCoroutine()
     {
         particle.Play();
         var x = this as IXCollision;

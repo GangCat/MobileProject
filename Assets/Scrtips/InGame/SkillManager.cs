@@ -48,6 +48,12 @@ public class SkillManager : DIMono
 
             // 장착중인 스킬 생성
             var skObj = Addressables.InstantiateAsync(skill.fxPrerfabPath).WaitForCompletion();
+            if(skObj.TryGetComponent<SkillBase>(out var skillBase))
+            {
+                skillBase.Init();
+                skillBase.SetData(skill.damage, skill.coolTime);
+            }
+            
             skObj.SetActive(false);
             skillCodeToSkillOffset[skCode] = skObj.transform.position;
             skillCodeToGameObject[skCode] = skObj;

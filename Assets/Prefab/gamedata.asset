@@ -158,7 +158,19 @@ MonoBehaviour:
   skills:
   - code: 1
     name: Explosion
-    damage: 30
-    coolTime: 5
+    damage: 5
+    coolTime: 7
     imagePath: UI/1-bit 16px icons part-1 outlines[ExplosionSkill]
     fxPrerfabPath: Assets/Prefab/Effect/P_ExplosionFx.prefab
+  - code: 2
+    name: MagicTornado
+    damage: 10
+    coolTime: 10
+    imagePath: UI/1-bit 16px icons part-1 outlines[MagicTornadoSkill]
+    fxPrerfabPath: Assets/Prefab/Skill/P_SkillMagicTornado.prefab
+  - code: 3
+    name: FireBall
+    damage: 10
+    coolTime: 5
+    imagePath: UI/1-bit 16px icons part-1 outlines[FireBallSkill]
+    fxPrerfabPath: Assets/Prefab/Skill/P_SkillFireBall.prefab

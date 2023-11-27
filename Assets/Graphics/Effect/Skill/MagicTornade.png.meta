@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f47fa4b6dd5820e41b92b7315d76f5fb
+guid: 4fd788a89711e344eb9da639a390f567
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Explosion_2_64x64_0
+      name: 5_magickahit_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da1f50730ab733b4a8961b652bd27209
+      internalID: -857307551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_magickahit_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c99f60584c0719c44a04a816292eeb90
+      internalID: -600333266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_magickahit_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d295a094265c0444199477f08cc94ae2
+      internalID: -199427218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_magickahit_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9028aa1ad6ab00540a893d7017978c63
+      internalID: 1745553481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_magickahit_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31782d80a3b2e3438d0c9b183ea3c5a
+      internalID: -1866673839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_magickahit_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04bf286438c36f4448bf442ffd742c3a
+      internalID: 1447503064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 5_magickahit_spritesheet_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 64
-        height: 64
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a05f55b90b6edb4a9eff02fe2d7d53f
-      internalID: 482896643
+      spriteID: d792a8af465fe5c40a25b255dc146b19
+      internalID: 1228375336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_1
+      name: 5_magickahit_spritesheet_7
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 100
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e56a6110b0d7fb648b18a638ed6fb7a2
-      internalID: -1837224637
+      spriteID: 298089fef352d3c418b9b5ab0f791779
+      internalID: -1979481376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_2
+      name: 5_magickahit_spritesheet_8
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 200
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a779245ae559728418c574eb88d2abd3
-      internalID: -692676143
+      spriteID: a03a00865f9fde846a1a5efca945bea1
+      internalID: -1549114541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_3
+      name: 5_magickahit_spritesheet_9
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 300
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b339c11932c0da4c88db5861ce8cf3c
-      internalID: -1588392359
+      spriteID: 641c667478ad6ab4bb70997c4fa0b4d0
+      internalID: 280913154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_4
+      name: 5_magickahit_spritesheet_10
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 400
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64be36264a9efa94ba173bea9954ead4
-      internalID: -2058550292
+      spriteID: 9990b89cedc1c2644aaa1fc46bb80ae6
+      internalID: -1096852855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_5
+      name: 5_magickahit_spritesheet_11
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        x: 500
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 264c780a7b37624419ac7930058a2245
-      internalID: 1833871816
+      spriteID: 60ee0c450a427704d8f29d27050c83b7
+      internalID: -1840708849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_6
+      name: 5_magickahit_spritesheet_12
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
+        x: 600
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +376,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1c723598f6c22e42ae82f8c0d8e0cf3
-      internalID: 2129826852
+      spriteID: 81dd35c485836df469b010fbd60ebc73
+      internalID: 116984723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_7
+      name: 5_magickahit_spritesheet_13
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
+        x: 0
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +397,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f3b5c30bf969144684d818dabd92e6a
-      internalID: 717079950
+      spriteID: 59f1403c3a576864a890e8f972d8dee0
+      internalID: 618299815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_8
+      name: 5_magickahit_spritesheet_14
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
+        x: 100
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +418,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12ee8bba2fe915348a0c9a0f2f41ba1a
-      internalID: 1740826189
+      spriteID: a0e56e56edaebe4479b8f5df456fdcc6
+      internalID: -300717269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_9
+      name: 5_magickahit_spritesheet_15
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
+        x: 200
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +439,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 625bee9bef066c94387d053d83e5055f
-      internalID: 803303055
+      spriteID: 8d204dc6e87f1944dbe0a997baddc73a
+      internalID: 1457545036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_10
+      name: 5_magickahit_spritesheet_16
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
+        x: 300
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +460,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 341dcd3aa4ba01047a2dda4f554ff020
-      internalID: -1122238909
+      spriteID: bdab4c13ae1543543af2e0efd3b2ff43
+      internalID: -756856681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_11
+      name: 5_magickahit_spritesheet_17
       rect:
         serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
+        x: 400
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,20 +481,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d82f1b666d8f1244af4b4076031a4d1
-      internalID: -2142960482
+      spriteID: b8f2bab352f51ef4f86a98f210314643
+      internalID: -1810339640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_12
+      name: 5_magickahit_spritesheet_18
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
+        x: 500
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,20 +502,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c0acc067fea12542a290b29abc7d5c4
-      internalID: 297791766
+      spriteID: cf1a134deb1f8eb4d9d5f34c32aceb8d
+      internalID: 580467656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_13
+      name: 5_magickahit_spritesheet_19
       rect:
         serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
+        x: 600
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,20 +523,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4034345be9a1a34497feaa234dcef69
-      internalID: 501328528
+      spriteID: d35b19c37406ef14795ab8f11fd041e8
+      internalID: 1514899436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_14
+      name: 5_magickahit_spritesheet_20
       rect:
         serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
+        x: 0
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,20 +544,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0eeefa91fa7c44348956b0c13e58ecc0
-      internalID: 214878140
+      spriteID: 7a10a042e9fd85744b99850e416a21d3
+      internalID: -1802438779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_15
+      name: 5_magickahit_spritesheet_21
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
-        width: 64
-        height: 64
+        x: 100
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,20 +565,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f6292032429b6b40ace36d8c9b2077b
-      internalID: 1973848864
+      spriteID: 485a291bc96ff994db6fea974b0f1919
+      internalID: 436975365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_16
+      name: 5_magickahit_spritesheet_22
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
+        x: 200
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,20 +586,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 188667e6e31c36748ad280e200b811d8
-      internalID: 490569267
+      spriteID: 31d328235c216d84cada2e1d09ae5f08
+      internalID: 436758782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_17
+      name: 5_magickahit_spritesheet_23
       rect:
         serializedVersion: 2
-        x: 1088
-        y: 0
-        width: 64
-        height: 64
+        x: 300
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,20 +607,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca51e389c341684408e9505e1b28aaed
-      internalID: 1054026161
+      spriteID: 5f1d429ddd2ccfd41a9d139c05b69b40
+      internalID: -836215511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_18
+      name: 5_magickahit_spritesheet_24
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 64
-        height: 64
+        x: 400
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,20 +628,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4e48bd9e95b51a4fbfc4e2b2f4a465e
-      internalID: 1296453331
+      spriteID: f580207a0e89dd2479cfad8fed8171da
+      internalID: -148047650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_19
+      name: 5_magickahit_spritesheet_25
       rect:
         serializedVersion: 2
-        x: 1216
-        y: 0
-        width: 64
-        height: 64
+        x: 500
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -523,20 +649,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55af844612270384c9dec8e5ba6051a7
-      internalID: 865141271
+      spriteID: 4b719147c6e49ae459b719e63d09902d
+      internalID: -1068163510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_20
+      name: 5_magickahit_spritesheet_26
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 64
-        height: 64
+        x: 600
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -544,20 +670,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce6c06ada7be7404891ce790aeb77919
-      internalID: 993702068
+      spriteID: d96bf85278f6fc84696212f4f8307bd4
+      internalID: 1802993983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_21
+      name: 5_magickahit_spritesheet_27
       rect:
         serializedVersion: 2
-        x: 1344
-        y: 0
-        width: 64
-        height: 64
+        x: 0
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -565,20 +691,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37a8d9536003a9e4c9bc837f40db5587
-      internalID: 1562644105
+      spriteID: 83f13d4ead8bab543bf47c6015369f83
+      internalID: 1097222724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_22
+      name: 5_magickahit_spritesheet_28
       rect:
         serializedVersion: 2
-        x: 1408
-        y: 0
-        width: 64
-        height: 64
+        x: 100
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -586,20 +712,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32665458dde38884b869c7e5893b3199
-      internalID: -1151198307
+      spriteID: 274c72e6336e15c469659d8a9dd55b72
+      internalID: 2049067598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_23
+      name: 5_magickahit_spritesheet_29
       rect:
         serializedVersion: 2
-        x: 1472
-        y: 0
-        width: 64
-        height: 64
+        x: 200
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -607,20 +733,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7586b33db26dda4abf615f3e81c53cf
-      internalID: 1895688235
+      spriteID: 5d5a44e32c006654f88bcd7092498931
+      internalID: 1626818609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_24
+      name: 5_magickahit_spritesheet_30
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 64
-        height: 64
+        x: 300
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,20 +754,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9c849c2edcd1f0488d8776ab7c7fcd6
-      internalID: 1797800086
+      spriteID: 558dfb43dbd954042b0ad9e4225f74c4
+      internalID: -1649293996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_25
+      name: 5_magickahit_spritesheet_31
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 64
-        height: 64
+        x: 400
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -649,20 +775,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d2386065fad1094688f5a513521aac7
-      internalID: 956392450
+      spriteID: c32459fcbc83e524e94c3b22e205dcfc
+      internalID: -1010675985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_26
+      name: 5_magickahit_spritesheet_32
       rect:
         serializedVersion: 2
-        x: 1664
-        y: 0
-        width: 64
-        height: 64
+        x: 500
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,20 +796,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e600be0ee71057549abd9fbf8960dbf8
-      internalID: 786823669
+      spriteID: 0be82332e6be9174492904ec0677dc14
+      internalID: 837806346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_27
+      name: 5_magickahit_spritesheet_33
       rect:
         serializedVersion: 2
-        x: 1728
-        y: 0
-        width: 64
-        height: 64
+        x: 600
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -691,20 +817,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f08e6ab5b4942274ba9765e43d27302c
-      internalID: -903211084
+      spriteID: 86949d3db39a0334dad370a1182d5c8a
+      internalID: 1249175859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_28
+      name: 5_magickahit_spritesheet_34
       rect:
         serializedVersion: 2
-        x: 1792
-        y: 0
-        width: 64
-        height: 64
+        x: 0
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -712,20 +838,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0cad80cb7b609e4c96f613325e40c28
-      internalID: 291597130
+      spriteID: 52060b74d505abe40aa0117269677c70
+      internalID: 366654506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_29
+      name: 5_magickahit_spritesheet_35
       rect:
         serializedVersion: 2
-        x: 1856
-        y: 0
-        width: 64
-        height: 64
+        x: 100
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -733,20 +859,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08b86ecceb6c0a7499b1128c881115aa
-      internalID: 1813976507
+      spriteID: d8a7f5086d09a7e498c6cfe7a52d2287
+      internalID: -999539864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_30
+      name: 5_magickahit_spritesheet_36
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 64
-        height: 64
+        x: 200
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -754,20 +880,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 955fe0736a39f3b43b063f5fc2abb3f9
-      internalID: 1958919624
+      spriteID: edddc779358f895498d951ba5fc86382
+      internalID: -1502518835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_31
+      name: 5_magickahit_spritesheet_37
       rect:
         serializedVersion: 2
-        x: 1984
-        y: 0
-        width: 64
-        height: 64
+        x: 300
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -775,20 +901,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c75a9f1ee666b0498a404ef0b681c2c
-      internalID: 1000517934
+      spriteID: c9a5c871f7597804c82a1a77c1439c07
+      internalID: -1255034461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_32
+      name: 5_magickahit_spritesheet_38
       rect:
         serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 64
-        height: 64
+        x: 400
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -796,20 +922,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 538c323648695c74b8544a02b3020087
-      internalID: 1493489353
+      spriteID: 5a3b7610900773a47987d6e8670e1440
+      internalID: 453999653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explosion_2_64x64_33
+      name: 5_magickahit_spritesheet_39
       rect:
         serializedVersion: 2
-        x: 2112
-        y: 0
-        width: 64
-        height: 64
+        x: 500
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -817,218 +943,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1a74cfe396563e47ac873b040913d3f
-      internalID: -1832277883
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_2_64x64_34
-      rect:
-        serializedVersion: 2
-        x: 2176
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1260b1b059c06d74f84054ffde9e51a1
-      internalID: -2085106042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_2_64x64_35
-      rect:
-        serializedVersion: 2
-        x: 2240
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42f1c07ac7fefd24eb3e2fa0746d963e
-      internalID: 505640953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_2_64x64_36
-      rect:
-        serializedVersion: 2
-        x: 2304
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 015ca164770e2dd439190f35de857ec9
-      internalID: 294520741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_2_64x64_37
-      rect:
-        serializedVersion: 2
-        x: 2368
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81323378cbf13be4591913b60bc007d7
-      internalID: 200028573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_2_64x64_38
-      rect:
-        serializedVersion: 2
-        x: 2432
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d66f1d95572fc2a4ebcb86613e2f8408
-      internalID: 1396388521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_2_64x64_39
-      rect:
-        serializedVersion: 2
-        x: 2496
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5875b115b90a2af4b9772961c9df43fd
-      internalID: 1308576233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_2_64x64_40
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d084b5fd82a08254eb509bbbc809067a
-      internalID: -482881125
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_2_64x64_41
-      rect:
-        serializedVersion: 2
-        x: 2624
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff5b5101bac67ad4c86848ec559f2101
-      internalID: -2116398415
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_2_64x64_42
-      rect:
-        serializedVersion: 2
-        x: 2688
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e429b50335ff2c84a9d962209878d3e4
-      internalID: -459614154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_2_64x64_43
-      rect:
-        serializedVersion: 2
-        x: 2752
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b97d34d0f95e9943825674d3588d7fc
-      internalID: -1597548385
+      spriteID: 65705b172dcc70c4a82641be8e48a784
+      internalID: -1619036298
       vertices: []
       indices: 
       edges: []
@@ -1044,50 +960,46 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Explosion_2_64x64_0: 482896643
-      Explosion_2_64x64_1: -1837224637
-      Explosion_2_64x64_10: -1122238909
-      Explosion_2_64x64_11: -2142960482
-      Explosion_2_64x64_12: 297791766
-      Explosion_2_64x64_13: 501328528
-      Explosion_2_64x64_14: 214878140
-      Explosion_2_64x64_15: 1973848864
-      Explosion_2_64x64_16: 490569267
-      Explosion_2_64x64_17: 1054026161
-      Explosion_2_64x64_18: 1296453331
-      Explosion_2_64x64_19: 865141271
-      Explosion_2_64x64_2: -692676143
-      Explosion_2_64x64_20: 993702068
-      Explosion_2_64x64_21: 1562644105
-      Explosion_2_64x64_22: -1151198307
-      Explosion_2_64x64_23: 1895688235
-      Explosion_2_64x64_24: 1797800086
-      Explosion_2_64x64_25: 956392450
-      Explosion_2_64x64_26: 786823669
-      Explosion_2_64x64_27: -903211084
-      Explosion_2_64x64_28: 291597130
-      Explosion_2_64x64_29: 1813976507
-      Explosion_2_64x64_3: -1588392359
-      Explosion_2_64x64_30: 1958919624
-      Explosion_2_64x64_31: 1000517934
-      Explosion_2_64x64_32: 1493489353
-      Explosion_2_64x64_33: -1832277883
-      Explosion_2_64x64_34: -2085106042
-      Explosion_2_64x64_35: 505640953
-      Explosion_2_64x64_36: 294520741
-      Explosion_2_64x64_37: 200028573
-      Explosion_2_64x64_38: 1396388521
-      Explosion_2_64x64_39: 1308576233
-      Explosion_2_64x64_4: -2058550292
-      Explosion_2_64x64_40: -482881125
-      Explosion_2_64x64_41: -2116398415
-      Explosion_2_64x64_42: -459614154
-      Explosion_2_64x64_43: -1597548385
-      Explosion_2_64x64_5: 1833871816
-      Explosion_2_64x64_6: 2129826852
-      Explosion_2_64x64_7: 717079950
-      Explosion_2_64x64_8: 1740826189
-      Explosion_2_64x64_9: 803303055
+      5_magickahit_spritesheet_0: -857307551
+      5_magickahit_spritesheet_1: -600333266
+      5_magickahit_spritesheet_10: -1096852855
+      5_magickahit_spritesheet_11: -1840708849
+      5_magickahit_spritesheet_12: 116984723
+      5_magickahit_spritesheet_13: 618299815
+      5_magickahit_spritesheet_14: -300717269
+      5_magickahit_spritesheet_15: 1457545036
+      5_magickahit_spritesheet_16: -756856681
+      5_magickahit_spritesheet_17: -1810339640
+      5_magickahit_spritesheet_18: 580467656
+      5_magickahit_spritesheet_19: 1514899436
+      5_magickahit_spritesheet_2: -199427218
+      5_magickahit_spritesheet_20: -1802438779
+      5_magickahit_spritesheet_21: 436975365
+      5_magickahit_spritesheet_22: 436758782
+      5_magickahit_spritesheet_23: -836215511
+      5_magickahit_spritesheet_24: -148047650
+      5_magickahit_spritesheet_25: -1068163510
+      5_magickahit_spritesheet_26: 1802993983
+      5_magickahit_spritesheet_27: 1097222724
+      5_magickahit_spritesheet_28: 2049067598
+      5_magickahit_spritesheet_29: 1626818609
+      5_magickahit_spritesheet_3: 1745553481
+      5_magickahit_spritesheet_30: -1649293996
+      5_magickahit_spritesheet_31: -1010675985
+      5_magickahit_spritesheet_32: 837806346
+      5_magickahit_spritesheet_33: 1249175859
+      5_magickahit_spritesheet_34: 366654506
+      5_magickahit_spritesheet_35: -999539864
+      5_magickahit_spritesheet_36: -1502518835
+      5_magickahit_spritesheet_37: -1255034461
+      5_magickahit_spritesheet_38: 453999653
+      5_magickahit_spritesheet_39: -1619036298
+      5_magickahit_spritesheet_4: -1866673839
+      5_magickahit_spritesheet_5: 1447503064
+      5_magickahit_spritesheet_6: 1228375336
+      5_magickahit_spritesheet_7: -1979481376
+      5_magickahit_spritesheet_8: -1549114541
+      5_magickahit_spritesheet_9: 280913154
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

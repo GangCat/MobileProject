@@ -30,7 +30,7 @@ public class HeroUnit : DIMono
 
     public void Update()
     {
-        HP -= Time.deltaTime;
+        HP -= Time.deltaTime * 100;
 
         // 적이 더이상 없는 경우
         if (MainObjs.EnemyUnits.Count < 1)
