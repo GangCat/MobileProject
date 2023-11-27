@@ -5,6 +5,7 @@ using DI;
 using System.IO;
 using UnityEngine.AddressableAssets;
 using System;
+using System.Linq;
 
 public class SkillManager : DIMono
 {
@@ -96,6 +97,7 @@ public class SkillManager : DIMono
                 skillCodeToGameObject[skCode].transform.position = mainObjs.HeroUnit.transform.position + skillCodeToSkillOffset[skCode];
                 skillCodeToGameObject[skCode].SetActive(true);
                 LeftSkillCooltime[skCode] = gameData.GetSkill(skCode).coolTime;
+
                 continue;
             }
             LeftSkillCooltime[skCode] -= Time.deltaTime;

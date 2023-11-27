@@ -26,6 +26,8 @@ public class StageManager : DIMono
     public override void Init()
     {
         SceneManager.LoadScene("GameScene", LoadSceneMode.Additive);
+        EventBus.Subscribe<EnterToBossStage>(ChangeToBossStage);
+        EventBus.Subscribe<RestartCurrentStage>(ChangeToNextStage);
     }
 
     private void Update()
@@ -57,6 +59,17 @@ public class StageManager : DIMono
         Debug.Log("OnApplicationQuit");
         EventBus.Publish(new ApplicationQuitEvent());
         //EventBus.Subscribe<EnterToBossStage>();
+    }
+
+    public void ChangeToBossStage(EnterToBossStage _obj)
+    {
+        StartCoroutine(ChangeSceneProcessCoroutine(playData.currentStage, true));
+    }
+
+    public void ChangeToNextStage(RestartCurrentStage _obj)
+    {
+        var nextStage = gameData.stages.Find(l => l.code == playData.currentStage.code + 1);
+        StartCoroutine(ChangeSceneProcessCoroutine(nextStage));
     }
 
     IEnumerator ChangeSceneProcessCoroutine(Stage _stage, bool _isBossStage = false)
@@ -107,5 +120,9 @@ public class StageManager : DIMono
         // 씬 로드
 
     }
-    // 현재 스테이지 정보 출력
+
+    private void OnDestroy()
+    {
+        EventBus.Unsubscribe<EnterToBossStage>(ChangeToBossStage);
+    }
 }
