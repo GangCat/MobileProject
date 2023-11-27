@@ -15,14 +15,6 @@ public class StageManager : DIMono
     [Inject]
     GameData gameData;
 
-
-    // 스테이지 처음으로 돌아가기
-    // 몬스터 스폰, 스테이지 보스(엘리트 몬스터) 스폰
-    // 보스 스테이지 입장
-    // 오브젝트풀 해제, 보스 소환
-    // 다음 스테이지로 이동
-    // 다음 스테이지 정보 일겅와서 몬스터, 보스(엘리트 몬스터) 소환
-
     public override void Init()
     {
         SceneManager.LoadScene("GameScene", LoadSceneMode.Additive);
@@ -121,9 +113,6 @@ public class StageManager : DIMono
         }
         color.a = endAlpha;
         fadeImage.color = color;
-
-        // 씬 언로드
-        // 씬 로드
 
     }
 
