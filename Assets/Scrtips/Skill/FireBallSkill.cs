@@ -20,10 +20,9 @@ public class FireBallSkill : SkillBase
         transform.position += Vector3.right * moveSpeed * Time.deltaTime;
     }
 
-    protected override void OnEnable()
+    private void OnDisable()
     {
         collisedObjs.Clear();
-        base.OnEnable();
     }
 
     protected override IEnumerator ActivateSkillCoroutine()
@@ -44,9 +43,7 @@ public class FireBallSkill : SkillBase
                     collisedObjs.Add(enemy);
                 }
             }
-            yield return null;
+            yield return waitAttackDelay;
         }
-
-
     }
 }

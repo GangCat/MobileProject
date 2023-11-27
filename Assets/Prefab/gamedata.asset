@@ -171,6 +171,6 @@ MonoBehaviour:
   - code: 3
     name: FireBall
     damage: 10
-    coolTime: 5
+    coolTime: 4
     imagePath: UI/1-bit 16px icons part-1 outlines[FireBallSkill]
     fxPrerfabPath: Assets/Prefab/Skill/P_SkillFireBall.prefab

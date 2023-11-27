@@ -17,7 +17,7 @@ public class SkillBase : DIMono, IXCollision
 
     public ParticleSystem particle;
 
-    protected WaitForSeconds waitSkillDelay;
+    protected WaitForSeconds waitAttackDelay;
 
     public float CenterX => transform.position.x;
     public float Width => width;
@@ -30,7 +30,7 @@ public class SkillBase : DIMono, IXCollision
 
     public override void Init()
     {
-        waitSkillDelay = new WaitForSeconds(attackDelay);
+        waitAttackDelay = new WaitForSeconds(attackDelay);
     }
 
     public void SetData(float _dmg, float _cooltime)
@@ -67,7 +67,7 @@ public class SkillBase : DIMono, IXCollision
                     enemy.TakeDamage(dmg);
             }
             ++curAttackCnt;
-            yield return waitSkillDelay;
+            yield return waitAttackDelay;
         }
         
 
