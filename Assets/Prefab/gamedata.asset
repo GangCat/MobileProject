@@ -258,19 +258,19 @@ MonoBehaviour:
     name: Explosion
     damage: 5
     coolTime: 7
-    imagePath: UI/1-bit 16px icons part-1 outlines[ExplosionSkill]
+    imagePath: icons[ExplosionSkill]
     fxPrerfabPath: Assets/Prefab/Effect/P_ExplosionFx.prefab
   - code: 2
     name: MagicTornado
     damage: 10
     coolTime: 10
-    imagePath: UI/1-bit 16px icons part-1 outlines[MagicTornadoSkill]
+    imagePath: icons[MagicTornadoSkill]
     fxPrerfabPath: Assets/Prefab/Skill/P_SkillMagicTornado.prefab
   - code: 3
     name: FireBall
     damage: 10
     coolTime: 4
-    imagePath: UI/1-bit 16px icons part-1 outlines[FireBallSkill]
+    imagePath: icons[FireBallSkill]
     fxPrerfabPath: Assets/Prefab/Skill/P_SkillFireBall.prefab
   bossMonsters:
   - code: 101
@@ -417,3 +417,143 @@ MonoBehaviour:
     damage: 150
     health: 1000
     attackRate: 2
+  status:
+  - code: 1
+    desc: "\uACF5\uACA9\uB825"
+    statKind: 0
+    lvTableCode: 1
+  - code: 2
+    desc: "\uCCB4\uB825"
+    statKind: 1
+    lvTableCode: 2
+  lvTable:
+  - code: 1
+    startLv: 1
+    endLv: 10
+    Incr: 1
+    costIncr: 1
+  - code: 1
+    startLv: 11
+    endLv: 20
+    Incr: 2
+    costIncr: 2
+  - code: 1
+    startLv: 21
+    endLv: 30
+    Incr: 3
+    costIncr: 3
+  - code: 1
+    startLv: 31
+    endLv: 40
+    Incr: 4
+    costIncr: 4
+  - code: 1
+    startLv: 41
+    endLv: 50
+    Incr: 5
+    costIncr: 5
+  - code: 1
+    startLv: 51
+    endLv: 60
+    Incr: 6
+    costIncr: 6
+  - code: 1
+    startLv: 61
+    endLv: 70
+    Incr: 7
+    costIncr: 7
+  - code: 1
+    startLv: 71
+    endLv: 80
+    Incr: 8
+    costIncr: 8
+  - code: 1
+    startLv: 81
+    endLv: 90
+    Incr: 9
+    costIncr: 9
+  - code: 1
+    startLv: 91
+    endLv: 100
+    Incr: 10
+    costIncr: 10
+  - code: 1
+    startLv: 101
+    endLv: 110
+    Incr: 11
+    costIncr: 11
+  - code: 1
+    startLv: 111
+    endLv: 120
+    Incr: 12
+    costIncr: 12
+  - code: 1
+    startLv: 121
+    endLv: 130
+    Incr: 13
+    costIncr: 13
+  - code: 2
+    startLv: 1
+    endLv: 10
+    Incr: 1
+    costIncr: 1
+  - code: 2
+    startLv: 11
+    endLv: 20
+    Incr: 2
+    costIncr: 2
+  - code: 2
+    startLv: 21
+    endLv: 30
+    Incr: 3
+    costIncr: 3
+  - code: 2
+    startLv: 31
+    endLv: 40
+    Incr: 4
+    costIncr: 4
+  - code: 2
+    startLv: 41
+    endLv: 50
+    Incr: 5
+    costIncr: 5
+  - code: 2
+    startLv: 51
+    endLv: 60
+    Incr: 6
+    costIncr: 6
+  - code: 2
+    startLv: 61
+    endLv: 70
+    Incr: 7
+    costIncr: 7
+  - code: 2
+    startLv: 71
+    endLv: 80
+    Incr: 8
+    costIncr: 8
+  - code: 2
+    startLv: 81
+    endLv: 90
+    Incr: 9
+    costIncr: 9
+  - code: 2
+    startLv: 91
+    endLv: 100
+    Incr: 10
+    costIncr: 10
+  - code: 2
+    startLv: 101
+    endLv: 110
+    Incr: 11
+    costIncr: 11
+  - code: 2
+    startLv: 111
+    endLv: 120
+    Incr: 12
+    costIncr: 12
+  - code: 2
+    startLv: 121
+    endLv: 130
+    Incr: 13
+    costIncr: 13

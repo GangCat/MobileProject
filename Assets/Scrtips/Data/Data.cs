@@ -117,7 +117,13 @@ public class Skill
     public void Init()
     {
         Debug.Log("prevIcon:" + _icon);
-        _icon = Addressables.LoadAssetAsync<Sprite>(imagePath).WaitForCompletion();
+        try
+        {
+            _icon = Addressables.LoadAssetAsync<Sprite>(imagePath).WaitForCompletion();
+        }catch(Exception e)
+        {
+            Debug.LogException(e);
+        }
         Debug.Log("curIcon:" + _icon);
         _icon.name = $"{code}_{name}";
     }
@@ -139,4 +145,30 @@ public class BossMonster
     public float damage;
     public float health;
     public float attackRate;
+}
+
+[Serializable]
+public class Status
+{
+    public int code;
+    public string desc;
+
+    public enum Stat
+    {
+        Attack,
+        Health
+    }
+
+    public Stat statKind;
+    public int lvTableCode;
+}
+
+[Serializable]
+public class LvTable
+{
+    public int code;
+    public int startLv;
+    public int endLv;
+    public int Incr;
+    public int costIncr;
 }

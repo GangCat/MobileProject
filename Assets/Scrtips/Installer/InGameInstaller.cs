@@ -46,6 +46,7 @@ public class InGameInstaller : MonoBehaviour
             EnemyUnits= new List<EnemyUnit>()
         });
 
+
         var userdata=DIContainer.GetObjT<UserData>();
 
         userdata.skillCodePerLv.Clear();

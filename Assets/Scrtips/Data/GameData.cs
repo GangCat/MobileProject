@@ -28,6 +28,8 @@ public class GameData :ScriptableObject
     public List<Stage> stages;
     public List<Skill> skills;
     public List<BossMonster> bossMonsters;
+    public List<Status> status;
+    public List<LvTable> lvTable;
 
 
     Dictionary<int, Skill> skillDic= new Dictionary<int, Skill>();

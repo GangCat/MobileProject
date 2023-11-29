@@ -43,7 +43,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ad7e91f342af3f448a6ca98031a1213d
-    m_Address: UI/1-bit 16px icons part-1 outlines
+    m_Address: icons
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
