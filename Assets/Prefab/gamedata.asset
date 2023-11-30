@@ -153,106 +153,249 @@ MonoBehaviour:
   stages:
   - code: 1
     name: "\uC232-1"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 101
     bossCode: 102
   - code: 2
     name: "\uC232-2"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 201
     bossCode: 202
   - code: 3
     name: "\uC232-3"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 301
     bossCode: 302
   - code: 4
     name: "\uC232-4"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 401
     bossCode: 402
   - code: 5
     name: "\uC232-5"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 501
     bossCode: 502
   - code: 6
     name: "\uC232-6"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 601
     bossCode: 602
   - code: 7
     name: "\uC232-7"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 701
     bossCode: 702
   - code: 8
     name: "\uC232-8"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 801
     bossCode: 802
   - code: 9
     name: "\uC232-9"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 901
     bossCode: 902
   - code: 10
     name: "\uC232-10"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 1001
     bossCode: 1002
   - code: 11
     name: "\uC232-11"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 1101
     bossCode: 1102
   - code: 12
     name: "\uC232-12"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 1201
     bossCode: 1202
   - code: 13
     name: "\uC232-13"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 1301
     bossCode: 1302
   - code: 14
     name: "\uC232-14"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 1401
     bossCode: 1402
   - code: 15
     name: "\uC232-15"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 1501
     bossCode: 1502
   - code: 16
     name: "\uC232-16"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 1601
     bossCode: 1602
   - code: 17
     name: "\uC232-17"
+    type: 0
     monsters:
       values: 0100000002000000
     eliteMonsterCode: 1701
     bossCode: 1702
+  - code: 10001
+    name: "\uB358\uC804-1"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 101
+    bossCode: 102
+  - code: 10002
+    name: "\uB358\uC804-2"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 201
+    bossCode: 202
+  - code: 10003
+    name: "\uB358\uC804-3"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 301
+    bossCode: 302
+  - code: 10004
+    name: "\uB358\uC804-4"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 401
+    bossCode: 402
+  - code: 10005
+    name: "\uB358\uC804-5"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 501
+    bossCode: 502
+  - code: 10006
+    name: "\uB358\uC804-6"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 601
+    bossCode: 602
+  - code: 10007
+    name: "\uB358\uC804-7"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 701
+    bossCode: 702
+  - code: 10008
+    name: "\uB358\uC804-8"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 801
+    bossCode: 802
+  - code: 10009
+    name: "\uB358\uC804-9"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 901
+    bossCode: 902
+  - code: 10010
+    name: "\uB358\uC804-10"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 1001
+    bossCode: 1002
+  - code: 10011
+    name: "\uB358\uC804-11"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 1101
+    bossCode: 1102
+  - code: 10012
+    name: "\uB358\uC804-12"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 1201
+    bossCode: 1202
+  - code: 10013
+    name: "\uB358\uC804-13"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 1301
+    bossCode: 1302
+  - code: 10014
+    name: "\uB358\uC804-14"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 1401
+    bossCode: 1402
+  - code: 10015
+    name: "\uB358\uC804-15"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 1501
+    bossCode: 1502
+  - code: 10016
+    name: "\uB358\uC804-16"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 1601
+    bossCode: 1602
+  - code: 10017
+    name: "\uB358\uC804-17"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 1701
+    bossCode: 1702
+  - code: 10018
+    name: "\uB358\uC804-18"
+    type: 1
+    monsters:
+      values: 01000000
+    eliteMonsterCode: 1801
+    bossCode: 1802
   skills:
   - code: 1
     name: Explosion
@@ -557,3 +700,220 @@ MonoBehaviour:
     endLv: 130
     Incr: 13
     costIncr: 13
+  dungeons:
+  - code: 1
+    name: "\uB358\uC804-1"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 100
+      - currencyType: 0
+        amount: 100
+    dungeonCost:
+      currencyType: 0
+      amount: 10
+    stageCode: 10001
+  - code: 2
+    name: "\uB358\uC804-2"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 105
+    dungeonCost:
+      currencyType: 0
+      amount: 11
+    stageCode: 10002
+  - code: 3
+    name: "\uB358\uC804-3"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 106
+    dungeonCost:
+      currencyType: 0
+      amount: 12
+    stageCode: 10003
+  - code: 4
+    name: "\uB358\uC804-4"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 107
+    dungeonCost:
+      currencyType: 0
+      amount: 13
+    stageCode: 10004
+  - code: 5
+    name: "\uB358\uC804-5"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 108
+    dungeonCost:
+      currencyType: 0
+      amount: 14
+    stageCode: 10005
+  - code: 6
+    name: "\uB358\uC804-6"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 109
+    dungeonCost:
+      currencyType: 0
+      amount: 15
+    stageCode: 10006
+  - code: 7
+    name: "\uB358\uC804-7"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 110
+    dungeonCost:
+      currencyType: 0
+      amount: 16
+    stageCode: 10007
+  - code: 8
+    name: "\uB358\uC804-8"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 111
+    dungeonCost:
+      currencyType: 0
+      amount: 17
+    stageCode: 10008
+  - code: 9
+    name: "\uB358\uC804-9"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 112
+    dungeonCost:
+      currencyType: 0
+      amount: 18
+    stageCode: 10009
+  - code: 10
+    name: "\uB358\uC804-10"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 113
+    dungeonCost:
+      currencyType: 0
+      amount: 19
+    stageCode: 10010
+  - code: 11
+    name: "\uB358\uC804-11"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 114
+    dungeonCost:
+      currencyType: 0
+      amount: 20
+    stageCode: 10011
+  - code: 12
+    name: "\uB358\uC804-12"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 115
+    dungeonCost:
+      currencyType: 0
+      amount: 21
+    stageCode: 10012
+  - code: 13
+    name: "\uB358\uC804-13"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 116
+    dungeonCost:
+      currencyType: 0
+      amount: 22
+    stageCode: 10013
+  - code: 14
+    name: "\uB358\uC804-14"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 117
+    dungeonCost:
+      currencyType: 0
+      amount: 23
+    stageCode: 10014
+  - code: 15
+    name: "\uB358\uC804-15"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 118
+    dungeonCost:
+      currencyType: 0
+      amount: 24
+    stageCode: 10015
+  - code: 16
+    name: "\uB358\uC804-16"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 119
+    dungeonCost:
+      currencyType: 0
+      amount: 25
+    stageCode: 10016
+  - code: 17
+    name: "\uB358\uC804-17"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 120
+    dungeonCost:
+      currencyType: 0
+      amount: 26
+    stageCode: 10017
+  - code: 18
+    name: "\uB358\uC804-18"
+    reward:
+      listRewards:
+      - currencyType: 0
+        amount: 110
+      - currencyType: 0
+        amount: 121
+    dungeonCost:
+      currencyType: 0
+      amount: 27
+    stageCode: 10018

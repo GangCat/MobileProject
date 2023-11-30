@@ -16,6 +16,8 @@ public class StatusListItemCell : ListItemCell<Status>
     UserData userData;
 
     [Inject]
+    PlayerStatGroup playerStatGroup;
+
     PlayerStat playerStat;
 
     [Inject]
@@ -48,6 +50,9 @@ public class StatusListItemCell : ListItemCell<Status>
     {
         stat = _data;
         injectObj.CheckAndInject(this);
+
+        playerStat = playerStatGroup.GetPlayerStat(PlayerStatGroup.Layer.Stat);
+
         UpdateStatInfo();
 
         idx = _idx;
@@ -93,5 +98,10 @@ public class StatusListItemCell : ListItemCell<Status>
 
         Debug.LogError("레벨 테이블에 값이 존재하지 않습니다.");
         return null;
+    }
+
+    public void Pressed()
+    {
+        Debug.Log("Pressed!");
     }
 }

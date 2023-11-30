@@ -1022,6 +1022,7 @@ GameObject:
   - component: {fileID: 619608379}
   - component: {fileID: 619608378}
   - component: {fileID: 619608381}
+  - component: {fileID: 619608382}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -1114,7 +1115,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 993233419}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &619608381
@@ -1129,12 +1131,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6383a271d4f9d604595256da11293b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 80
   curHP: 0
-  maxHP: 3000
   isAttack: 0
+  unitVisual: {fileID: 619608382}
+  DamageFontPath: 
   animator: {fileID: 619608378}
   moveSpeed: 4
+--- !u!114 &619608382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619608377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e37e40e4bedc748984dfae8f288dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageFontTf: {fileID: 993233419}
+  hpBarTf: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &636801971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,6 +1957,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40876acb012a56544a3bf08bcdbf7b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &993233418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993233419}
+  m_Layer: 0
+  m_Name: DamageFontTf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &993233419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993233418}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.035, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 619608380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1002287278
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ public class StageManager : DIMono
         EventBus.Subscribe<ChallangeToBossStage>(ChangeToBossStage);
         EventBus.Subscribe<RestartCurrentStage>(RestartCurrentStage);
         EventBus.Subscribe<ChangeToNextStage>(ChangeToNextStage);
+        EventBus.Subscribe<EnterToDungeon>(EnterToDungeon);
     }
 
     private void Update()
@@ -77,6 +78,12 @@ public class StageManager : DIMono
         StartCoroutine(ChangeSceneProcessCoroutine(playData.currentStage));
     }
 
+    public void EnterToDungeon(EnterToDungeon _enterDungeon)
+    {
+        var dungeonStage = gameData.stages.Find(l => l.code == _enterDungeon.dungeon.stageCode);
+        StartCoroutine(ChangeSceneProcessCoroutine(dungeonStage));
+    }
+
     IEnumerator ChangeSceneProcessCoroutine(Stage _stage, bool _isBossStage = false)
     {
         // 페이드 인 대기
@@ -125,5 +132,6 @@ public class StageManager : DIMono
         EventBus.Unsubscribe<ChallangeToBossStage>(ChangeToBossStage);
         EventBus.Unsubscribe<RestartCurrentStage>(RestartCurrentStage);
         EventBus.Unsubscribe<ChangeToNextStage>(ChangeToNextStage);
+        EventBus.Unsubscribe<EnterToDungeon>(EnterToDungeon);
     }
 }

@@ -20,6 +20,8 @@ public class RestartCurrentStage { }
 /// </summary>
 public class ChangeToNextStage { }
 
+public class EnterToDungeon { public Dungeon dungeon;}
+
 public class GameData :ScriptableObject
 {
     // 각종 정보들 저장.
@@ -30,7 +32,7 @@ public class GameData :ScriptableObject
     public List<BossMonster> bossMonsters;
     public List<Status> status;
     public List<LvTable> lvTable;
-
+    public List<Dungeon> dungeons;
 
     Dictionary<int, Skill> skillDic= new Dictionary<int, Skill>();
 

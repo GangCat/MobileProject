@@ -3,9 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SocialPlatforms;
+
+
+public enum CurrencyType
+{
+    Gold,
+    DungeonKey
+}
+
+public enum SpaceType
+{
+    Stage,
+    Dungeon
+}
+
 
 [Serializable]
 public class Item
@@ -66,6 +81,7 @@ public class Stage
 {
     public int code;
     public string name;
+    public SpaceType type;
 
     public IntList monsters;
     // 스테이지 정예몹
@@ -171,4 +187,50 @@ public class LvTable
     public int endLv;
     public int Incr;
     public int costIncr;
+}
+
+
+
+[Serializable]
+public class Dungeon
+{
+    public int code;
+    public string name;
+    public Reward reward;
+    public CurrencyPair dungeonCost;
+    public int stageCode;
+}
+
+[Serializable]
+public class Reward : IParsable
+{
+    public List<CurrencyPair> listRewards =new List<CurrencyPair>();
+
+    public void FillFromStr(string str)
+    {
+        listRewards.Clear();
+        // 여러개일 경우 , 를 기준으로 string을 분할
+        var strArr = str.Split('/');
+        foreach(var rewardStr in strArr)
+        {
+            var r = new CurrencyPair();
+            r.FillFromStr(rewardStr);
+            listRewards.Add(r);
+        }
+    }
+}
+
+[Serializable]
+public class CurrencyPair : IParsable
+{
+    public CurrencyType currencyType;
+    public int amount;
+
+    public void FillFromStr(string str)
+    {
+        var rewardStrArr = str.Split(',');
+        currencyType = Enum.Parse<CurrencyType>(rewardStrArr[0]);
+        amount = int.Parse(rewardStrArr[1]);
+    }
+
 }

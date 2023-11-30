@@ -7,26 +7,37 @@ using static UnitAnim;
 
 public class HeroUnit : DIMono
 {
-    public float damage;
+
     public float curHP;
-    public float maxHP;
     public bool isAttack;
+    public UnitVisual unitVisual;
 
     [Inject]
     MainObjs MainObjs;
+
+    [Inject]
+    PlayerStatGroup playerStatGroup;
+
+    [Inject]
+    protected ObjectPoolManager poolManager;
+
+    [Inject("DamageFontPath")]
+    public string DamageFontPath;
 
     UnitAnim unitAnim;
 
     public Animator animator;
 
-    public float HpRatio => curHP / maxHP;
+    public float HpRatio => curHP / MaxHp;
 
+    public float MaxHp => playerStatGroup.GetStat(Status.Stat.Health);
+    public float Damage => playerStatGroup.GetStat(Status.Stat.Attack);
 
     public override void Init()
     {
         unitAnim = new UnitAnim(animator);
         unitAnim.PlayAni(AniKind.Walk);
-        curHP = maxHP;
+        curHP = MaxHp;
     }
 
     public void Update()
@@ -64,7 +75,7 @@ public class HeroUnit : DIMono
         if (MainObjs.EnemyUnits.Count == 0)
             return;
 
-        MainObjs.EnemyUnits[0].TakeDamage(damage);
+        MainObjs.EnemyUnits[0].TakeDamage(Damage);
     }
 
     public void TakeDamage(float _dmg)
@@ -76,11 +87,11 @@ public class HeroUnit : DIMono
         }
 
         //데미지 폰트를 오브젝트 풀링으로 관리하며 데미지 출력
-        //GameObject damageFontGo = poolManager.GetObject(DamageFontPath);
-        //damageFontGo.transform.position = unitVisual.damageFontTf.position;
-        //damageFontGo.GetComponent<DamageFont>().Show(_dmg, Color.white);
+        GameObject damageFontGo = poolManager.GetObject(DamageFontPath);
+        damageFontGo.transform.position = unitVisual.damageFontTf.position;
+        damageFontGo.GetComponent<DamageFont>().Show(_dmg, Color.white);
 
-        //StartCoroutine(unitVisual.DamageFx());
+        StartCoroutine(unitVisual.DamageFx());
     }
 
 

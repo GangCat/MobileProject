@@ -17,18 +17,44 @@ public class TestSetting
     public int gold;
 }
 
+[Serializable]
+public class StatValue
+{
+    public Status.Stat stat;
+    public float value;
+}
+
+[Serializable]
+public class GameSetting
+{
+    public List<StatValue> firstValues;
+
+    public float GetFirstValue(Status.Stat stat)
+    {
+        var sv = firstValues.Find(l => l.stat == stat);
+        if (sv == null)
+        {
+            return 0;
+        }
+
+        return sv.value;
+    }
+}
+
 public class MainUiInstaller : MonoBehaviour
 {
     DIContainer container;
 
     public TestSetting TestSetting;
 
+    public GameSetting gameSetting;
+
     private void Awake()
     {
         container = new DIContainer();
 
         DIContainer.AddContainer(container);
-
+        container.Regist(gameSetting);
 
 #if UNITY_EDITOR
         var userData = DIContainer.GetObjT<UserData>();
@@ -39,10 +65,18 @@ public class MainUiInstaller : MonoBehaviour
         userData.gold = TestSetting.gold;
 #endif
 
-        var playerStat = new PlayerStat();
-        playerStat.Init();
-        playerStat.UpdateAllStat();
-        container.Regist(playerStat);
+        var playerStatGroup = new PlayerStatGroup();
+
+        var pss = new PlayerStatByStatus();
+        playerStatGroup.SetPlayerStat(PlayerStatGroup.Layer.FirstValue, new FirstStat());
+        playerStatGroup.SetPlayerStat(PlayerStatGroup.Layer.Stat, pss);
+
+
+        playerStatGroup.Init();
+
+
+        container.Regist(pss);
+        container.Regist(playerStatGroup);
     }
 
     private void OnDestroy()
