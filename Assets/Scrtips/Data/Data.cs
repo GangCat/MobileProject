@@ -70,7 +70,7 @@ public class Range: IParsable
 public class Monster
 {
     public int code;
-    public string name;
+    public Str name;
     public string path;
 
     public float health;
@@ -80,7 +80,7 @@ public class Monster
 public class Stage
 {
     public int code;
-    public string name;
+    public Str name;
     public SpaceType type;
 
     public IntList monsters;
@@ -108,11 +108,15 @@ public class Stage
     }
 }
 
+
+
+
+
 [Serializable]
 public class Skill
 {
     public int code;
-    public string name;
+    public Str name;
 
     public float damage;
     public float coolTime;
@@ -156,7 +160,7 @@ public class Skill
 public class BossMonster
 {
     public int code;
-    public string name;
+    public Str name;
     public string path;
     public float damage;
     public float health;
@@ -167,7 +171,7 @@ public class BossMonster
 public class Status
 {
     public int code;
-    public string desc;
+    public Str desc;
 
     public enum Stat
     {
@@ -195,7 +199,7 @@ public class LvTable
 public class Dungeon
 {
     public int code;
-    public string name;
+    public Str name;
     public Reward reward;
     public CurrencyPair dungeonCost;
     public int stageCode;

@@ -45,6 +45,7 @@ public class MainUiInstaller : MonoBehaviour
 {
     DIContainer container;
 
+    public EtcStrList etcStrList;
     public TestSetting TestSetting;
 
     public GameSetting gameSetting;
@@ -75,6 +76,7 @@ public class MainUiInstaller : MonoBehaviour
         playerStatGroup.Init();
 
 
+        container.Regist(etcStrList);
         container.Regist(pss);
         container.Regist(playerStatGroup);
     }

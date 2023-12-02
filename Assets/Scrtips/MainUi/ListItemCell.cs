@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ListItemCell<T> : MonoBehaviour
 {
-    public TMP_Text text;
+    public TMPStrUGUI text;
 
     public int idx;
 

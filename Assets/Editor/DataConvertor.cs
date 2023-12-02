@@ -1,3 +1,4 @@
+using Assets.Editor;
 using ExcelDataReader;
 using System;
 using System.Collections;
@@ -5,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Reflection;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -68,6 +70,103 @@ public class DataConvertor
         AssetDatabase.SaveAssets();
     }
 
+    public static void ReadStrUsageFromCsv()
+    {
+        var dataset = GetDataSetFromCsv();
+
+        if (dataset == null)
+        {
+            strUsages = new List<StrUsage>();
+            return;
+        }
+
+        strUsages = MakeListFromDataSet<StrUsage>(dataset.Tables[0].TableName, dataset);
+    }
+
+    public static void MakeAssetForEtcStr()
+    {
+        var dataset = GetEtcStrDataSetFromCsv();
+
+        if (dataset == null)
+        {
+            return;
+        }
+
+        // 저장될 에셋의 경로 지정
+        var assetPath = "Assets/Prefab/etcstr.asset";
+        // 우선 해당 경로에 에셋을 가져옴
+        var etcStrList = AssetDatabase.LoadAssetAtPath<EtcStrList>(assetPath);
+
+        // 에셋이 없어서 가져오지 못했을 경우
+        if (etcStrList == null)
+        {
+            // 해당 에셋을 스크립터블 오브젝트로 생성? 인스턴스로 생성
+            etcStrList = ScriptableObject.CreateInstance<EtcStrList>();
+            // 스크립터블 오브젝트를 해당 경로에 생성
+            AssetDatabase.CreateAsset(etcStrList, assetPath);
+        }
+
+        etcStrList.etcStrList = MakeListFromDataSet<EtcStr>(dataset.Tables[0].TableName, dataset);
+
+        // 바뀐 값을 적용시켜줌.
+        EditorUtility.SetDirty(etcStrList);
+        // 적용된 에셋을 실제로 저장함.
+        AssetDatabase.SaveAssets();
+    }
+
+
+    public static void UpdateCsv()
+    {
+
+
+        DataTable dataTable = new DataTable();
+        var filePath = "Assets/xlsx/str.csv";
+        var classType = typeof(StrUsage);
+        var fields = classType.GetFields();
+
+        for (int i = 0; i < fields.Length; ++i)
+            dataTable.Columns.Add(fields[i].Name, fields[i].FieldType);
+        Debug.Log($"Count: {strUsages.Count}");
+        Debug.Log($"kr: {strUsages[0].kr}");
+        foreach(var strUsage in strUsages)
+        {
+            var row= dataTable.NewRow();
+
+            for(int i = 0; i < fields.Length; ++i)
+                row[i] = fields[i].GetValue(strUsage);
+
+            dataTable.Rows.Add(row);
+        }
+
+        DataTableToCSV(dataTable, filePath);
+    }
+
+    static void DataTableToCSV(DataTable dataTable, string filePath)
+    {
+        // StreamWriter를 사용하여 CSV 파일에 데이터 쓰기
+        using (StreamWriter streamWriter = new StreamWriter(filePath))
+        {
+            // 열 이름 헤더 쓰기
+            foreach (DataColumn column in dataTable.Columns)
+            {
+                streamWriter.Write(column.ColumnName);
+                streamWriter.Write(",");
+            }
+            streamWriter.WriteLine();
+
+            // 각 행의 데이터를 CSV 파일에 쓰기
+            foreach (DataRow row in dataTable.Rows)
+            {
+                foreach (var item in row.ItemArray)
+                {
+                    streamWriter.Write(item);
+                    streamWriter.Write(",");
+                }
+                streamWriter.WriteLine();
+            }
+        }
+    }
+
     private static List<T> MakeListFromDataSet<T>(string sheetName, DataSet dataset) where T : new()
     {
         var type = typeof(T);
@@ -117,12 +216,48 @@ public class DataConvertor
                 // 해당 인터페이스는 Data에서 확인해볼 수 있음. 어떻게 선언하고 사용하는지
                 if(fieldType.GetInterface("IParsable")!=null)
                 {
+
                     // Activator.CreateInstance 메소드를 사용하면 해당 필드타입의 인스턴스, 객체를 생성함.
                     var obj = Activator.CreateInstance(fieldType);
                     // 생성한 객체의 타입을 인터페이스의 객체로 변환.
                     var parsable= obj as IParsable;
                     // 인터페이스의 함수를 호출
                     parsable.FillFromStr(cellValue.ToString());
+
+                    if (fieldType == typeof(Str))
+                    {
+                        var str = parsable as Str;
+                        // 현재 시트에서 코드칼럼이 어디있는지 확인
+                        var codeIdx = namePerColIdx["code"];
+                        // 코드 칼럼에서 현재 로우와 교차되는 위치를 확인해서 그 값을 코드로 사용
+                        var code = (int)Convert.ChangeType(itemtable.Rows[r][codeIdx],typeof(int));
+
+                        var strUsage = strUsages.Find(l => l.hostName == itemtable.TableName && l.fieldName == name && l.code == code);
+                        Debug.Log($"str.kor: {str.kor}");
+
+                        if (strUsage == null)
+                        {
+                            strUsages.Add(new StrUsage()
+                            {
+                                code = code,
+                                hostName = itemtable.TableName,
+                                fieldName = name,
+                                kr = str.kor
+                            });
+                        }
+                        else if(strUsage.kr != str.kor)
+                        {
+                            strUsage.kr = str.kor;
+                            strUsage.en = "";
+                            strUsage.jp = "";
+                        }
+                        else
+                        {
+                            str.eng = strUsage.en;
+                            str.jp = strUsage.jp;
+                        }
+                    }
+
                     // 값 갱신
                     finalValue = parsable;
                 }
@@ -145,8 +280,13 @@ public class DataConvertor
             }
 
             // 엑셀 시트의 구분(code, price 등)이 없다면 컨티뉴
-            if (itemtable.Rows[r][0] is DBNull)
+            var firstVal = itemtable.Rows[r][0];
+            if (firstVal is DBNull )
                 continue;
+
+            if (string.IsNullOrWhiteSpace(firstVal.ToString()))
+                continue;
+
             // 결과값에 아이템의 객체를 저장
             result.Add(tempItem);
         }
@@ -168,7 +308,9 @@ public class DataConvertor
 
             // string으로 바꾸고 딕셔너리에 저장
             var fielName = cellObj as string;
-            _tempDic.Add(fielName, i);
+            if (string.IsNullOrEmpty(fielName))
+                continue;
+            _tempDic.Add(fielName.Trim(), i);
         }
 
     }
@@ -192,4 +334,51 @@ public class DataConvertor
         }
 
     }
+
+    private static DataSet GetDataSetFromCsv()
+    {
+        // 엑셀 파일의 경로
+        string csvPath = "Assets/xlsx/str.csv";
+        // 스트림을 정의함, 파일을 오픈, 접근을 읽기만 가능하게, fileshare는 왜있더라?
+        // -> 파일을 다른 곳에서 쓰고 있어도 내가 열어서 작업을 하겠다라는 의미
+        // 저게 없으면 엑셀이 열린채로 엑셀을 일어들일 때 에러가 발생함
+
+
+        if (!File.Exists(csvPath))
+            return null;
+
+        using (var stream = File.Open(csvPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+        {
+            // 스트림을 변수로 주고 리더라는걸 만들어서 리더가 읽은 내용을 dataset으로 변환해줌.
+            using (var reader = ExcelReaderFactory.CreateCsvReader(stream))
+            {
+                return reader.AsDataSet();
+            }
+        }
+    }
+
+    private static DataSet GetEtcStrDataSetFromCsv()
+    {
+        // 엑셀 파일의 경로
+        string csvPath = "Assets/xlsx/etcstr.csv";
+        // 스트림을 정의함, 파일을 오픈, 접근을 읽기만 가능하게, fileshare는 왜있더라?
+        // -> 파일을 다른 곳에서 쓰고 있어도 내가 열어서 작업을 하겠다라는 의미
+        // 저게 없으면 엑셀이 열린채로 엑셀을 일어들일 때 에러가 발생함
+
+
+        if (!File.Exists(csvPath))
+            return null;
+
+        using (var stream = File.Open(csvPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+        {
+            // 스트림을 변수로 주고 리더라는걸 만들어서 리더가 읽은 내용을 dataset으로 변환해줌.
+            using (var reader = ExcelReaderFactory.CreateCsvReader(stream))
+            {
+                return reader.AsDataSet();
+            }
+        }
+    }
+
+
+    static List<StrUsage> strUsages = new List<StrUsage>();
 }

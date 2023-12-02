@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class DungeonListItemCell : ListItemCell<Dungeon>
 {
@@ -17,7 +18,7 @@ public class DungeonListItemCell : ListItemCell<Dungeon>
     public override void SetData(Dungeon _data, int _idx)
     {
         currentDungeon = _data;
-        text.text = _data.name;
+        text.Str = _data.name;
         idx = _idx;
     }
 
