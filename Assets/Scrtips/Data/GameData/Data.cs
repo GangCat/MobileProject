@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +9,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SocialPlatforms;
-
+using static Status;
 
 public enum CurrencyType
 {
@@ -23,13 +25,124 @@ public enum SpaceType
 
 
 [Serializable]
+public class StatValue : IParsable
+{
+    public Stat stat;
+    public double val;
+
+    public void FillFromStr(string str)
+    {
+        var strArr = str.Split(',');
+        stat = Enum.Parse<Stat>(strArr[0]);
+        val = double.Parse(strArr[1]);
+    }
+}
+
+
+[Serializable]
+public class StatValueList : IParsable ,IList<StatValue>
+{
+    public List<StatValue> statValues = new List<StatValue>();
+
+    public void FillFromStr(string str)
+    {
+        var strArr = str.Split('/');
+        foreach (var curStr in strArr)
+        {
+            var statVal = new StatValue();
+            statVal.FillFromStr(curStr);
+            statValues.Add(statVal);
+        }
+    }
+
+
+    public StatValue this[int index] { get => statValues[index]; set => statValues[index] =value; }
+
+    public int Count => statValues.Count;
+
+    public bool IsReadOnly => true;
+
+    public void Add(StatValue item)
+    {
+        statValues.Add(item);
+    }
+
+    public void Clear()
+    {
+        statValues.Clear();
+    }
+
+    public bool Contains(StatValue item)
+    {
+        return statValues.Contains(item);
+    }
+
+    public void CopyTo(StatValue[] array, int arrayIndex)
+    {
+        statValues.CopyTo(array,arrayIndex);
+    }
+
+
+    public IEnumerator<StatValue> GetEnumerator()
+    {
+        return statValues.GetEnumerator();
+    }
+
+    public int IndexOf(StatValue item)
+    {
+        return statValues.IndexOf(item);
+    }
+
+    public void Insert(int index, StatValue item)
+    {
+        statValues.Insert(index, item);
+    }
+
+    public bool Remove(StatValue item)
+    {
+        return statValues.Remove(item);
+    }
+
+    public void RemoveAt(int index)
+    {
+        statValues.RemoveAt(index);
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return statValues.GetEnumerator();
+    }
+}
+
+[Serializable]
+public class Equipment
+{
+    public int code;
+    public string name;
+    public int grade;
+
+    // Enum의 경우 공백이면 None이 들어감.
+    public enum EquipSlot
+    {
+        Weapon,
+        Armor,     
+        Boots,
+        Ring,
+        Shield
+    }
+    public EquipSlot equipSlot;
+    public StatValueList stats,statPerLv;
+
+
+
+}
+
+[Serializable]
 public class Item
 {
     // 엑셀의 구분의 이름과 동일하게 설정
     public int code;
     public string name;
-    public int price;
-    public int bbb;
 
     // Enum의 경우 공백이면 None이 들어감.
     public enum ItemType
@@ -39,16 +152,10 @@ public class Item
         Material
     }
     public ItemType itemType;
-
-    // 사용자 정의 자료형
-    public Range lootRange;
 }
 
 // 값을 넣을 때 확인할 인터페이스
-public interface IParsable
-{
-    public void FillFromStr(string str);
-}
+
 
 [Serializable]
 public class Range: IParsable
@@ -108,10 +215,6 @@ public class Stage
            
     }
 }
-
-
-
-
 
 [Serializable]
 public class Skill

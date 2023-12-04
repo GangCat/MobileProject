@@ -9,7 +9,7 @@ public class PlayerStatGroup
     {
         FirstValue,
         Stat,
-        Equipment
+        Equipment,
     }
 
     Dictionary<Layer, PlayerStat> playerStatLayers = new Dictionary<Layer, PlayerStat>();

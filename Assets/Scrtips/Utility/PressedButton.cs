@@ -8,11 +8,9 @@ using UnityEngine.UI;
 
 public class PressedButton : Button
 {
-    public UnityEvent<int> whilePressed;
+    public UnityEvent whilePressed;
 
     public float pressButtonDelay = 1f;
-
-    public int incrAmount = 0;
 
     public float pressInterval = 0.1f;
 
@@ -27,7 +25,7 @@ public class PressedButton : Button
         {
             if (isPressed == false)
             {
-                whilePressed.Invoke(incrAmount);
+                whilePressed.Invoke();
                 startTime = Time.time;
             }
             isPressed = true;
@@ -37,7 +35,7 @@ public class PressedButton : Button
             var num =Mathf.FloorToInt( Time.time / pressInterval);
             if (num != lastNum)
             {
-                whilePressed.Invoke(incrAmount);
+                whilePressed.Invoke();
                 lastNum = num;
             }
         }

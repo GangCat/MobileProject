@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/// <summary>
+/// 어플리케이션 종료시 호출
+/// </summary>
+public class ApplicationQuitEvent { }
 
 public class GameData :ScriptableObject
 {
@@ -18,6 +22,9 @@ public class GameData :ScriptableObject
     public List<Dungeon> dungeons;
 
     Dictionary<int, Skill> skillDic= new Dictionary<int, Skill>();
+
+
+
 
     public Skill GetSkill(int code)
     {
@@ -40,12 +47,17 @@ public class GameData :ScriptableObject
         EventBus.Subscribe<ApplicationQuitEvent>(OnQuit);
     }
 
-    private void OnQuit(ApplicationQuitEvent obj)
+    public void Release()
     {
         foreach (var s in skills)
         {
             s.ReleaseIcon();
         }
+    }
+
+    private void OnQuit(ApplicationQuitEvent obj)
+    {
+        Release();
 
         EventBus.Unsubscribe<ApplicationQuitEvent>(OnQuit);
     }

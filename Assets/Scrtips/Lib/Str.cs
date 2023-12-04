@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 
+public interface IParsable
+{
+    public void FillFromStr(string str);
+}
+
 [Serializable]
 public class EtcStr {
 

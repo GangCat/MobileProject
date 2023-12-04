@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 어플리케이션 종료시 호출
-/// </summary>
-public class ApplicationQuitEvent { }
+
 /// <summary>
 /// 보스 스테이지로 이동
 /// </summary>

@@ -15,6 +15,8 @@ public class PressButtonEditor : ButtonEditor
         this.serializedObject.Update();
         EditorGUILayout.PropertyField(this.serializedObject.FindProperty("whilePressed"), true);
         EditorGUILayout.PropertyField(this.serializedObject.FindProperty("pressInterval"), true);
+        EditorGUILayout.PropertyField(this.serializedObject.FindProperty("pressButtonDelay"), true);
+        EditorGUILayout.PropertyField(this.serializedObject.FindProperty("pressButtonDelay"), true);
         this.serializedObject.ApplyModifiedProperties();
 
     }
