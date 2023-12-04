@@ -19,18 +19,27 @@ public class EquipmentStat : PlayerStat
         PlayerStat ps = new PlayerStat();
 
         statPerEquipment[equipment.equipSlot] = ps;
+
+        // 레벨별 증가량 적용시키기.
+
         foreach(var st in equipment.stats)
         {
-
+            ps.IncrStat(st.stat, st.val);
         }
 
         UpdateAllStat();
     }
 
-
-
     public override void UpdateAllStat()
     {
+        SetStat(Status.Stat.Health, statPerEquipment.Sum(l => l.Value.GetStat(Status.Stat.Health)));
+        SetStat(Status.Stat.Attack, statPerEquipment.Sum(l => l.Value.GetStat(Status.Stat.Attack)));
 
+        //foreach (var ps in statPerEquipment.Values)
+        //{
+        //    IncrStat(Status.Stat.Health, ps.GetStat(Status.Stat.Health));
+        //    IncrStat(Status.Stat.Attack, ps.GetStat(Status.Stat.Attack));
+        //}
     }
+
 }

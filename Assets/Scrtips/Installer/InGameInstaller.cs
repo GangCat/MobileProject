@@ -58,16 +58,16 @@ public class InGameInstaller : MonoBehaviour
         });
 
 
-        var userdata=DIContainer.GetObjT<UserData>();
+        var userData=DIContainer.GetObjT<UserData>();
 
-        userdata.skillCodePerLv.Clear();
-        userdata.equippedSkillCodes.Clear();
+        userData.skillCodePerLv.Clear();
+        userData.equippedSkillCodes.Clear();
         foreach(var sk in initSkillCodes)
         {
-            userdata.skillCodePerLv[sk.code] = sk.level;
+            userData.skillCodePerLv[sk.code] = sk.level;
             if (sk.isEquipped)
             {
-                userdata.equippedSkillCodes.Add(sk.code);
+                userData.equippedSkillCodes.Add(sk.code);
             }
         }
 

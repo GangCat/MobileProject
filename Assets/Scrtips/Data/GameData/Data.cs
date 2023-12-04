@@ -28,13 +28,15 @@ public enum SpaceType
 public class StatValue : IParsable
 {
     public Stat stat;
-    public double val;
+    //public double val;
+    public float val;
 
     public void FillFromStr(string str)
     {
         var strArr = str.Split(',');
         stat = Enum.Parse<Stat>(strArr[0]);
-        val = double.Parse(strArr[1]);
+        //val = double.Parse(strArr[1]);
+        val = float.Parse(strArr[1]);
     }
 }
 
@@ -81,7 +83,6 @@ public class StatValueList : IParsable ,IList<StatValue>
     {
         statValues.CopyTo(array,arrayIndex);
     }
-
 
     public IEnumerator<StatValue> GetEnumerator()
     {
@@ -131,10 +132,8 @@ public class Equipment
         Shield
     }
     public EquipSlot equipSlot;
-    public StatValueList stats,statPerLv;
-
-
-
+    public StatValueList stats,statsPerLv;
+    public string iconPath;
 }
 
 [Serializable]

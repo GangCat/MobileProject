@@ -13,6 +13,7 @@ public class GameData :ScriptableObject
 {
     // 각종 정보들 저장.
     public List<Item> items;
+    public List<Equipment> equipments;
     public List<Monster> monsters;
     public List<Stage> stages;
     public List<Skill> skills;

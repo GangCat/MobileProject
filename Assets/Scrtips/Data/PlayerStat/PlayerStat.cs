@@ -42,4 +42,15 @@ public class PlayerStat
         Stats[stat] += value;
 
     }
+
+    /// <summary>
+    /// 기존 스탯을 초기화시키고 증가시키는 함수.
+    /// </summary>
+    /// <param name="stat"></param>
+    /// <param name="value"></param>
+    public void SetStat(Status.Stat stat, float value)
+    {
+        Stats[stat] = 0;
+        IncrStat(stat, value);
+    }
 }

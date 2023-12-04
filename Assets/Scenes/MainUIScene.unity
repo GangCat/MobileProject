@@ -522,7 +522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &145896620
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2983,6 +2983,27 @@ MonoBehaviour:
       value: 10
     - stat: 1
       value: 3000
+  initEquipSlots:
+  - equipmentCode: 1001
+    count: 1
+    level: 1
+    isEquipped: 1
+  - equipmentCode: 2001
+    count: 1
+    level: 1
+    isEquipped: 1
+  - equipmentCode: 3001
+    count: 1
+    level: 1
+    isEquipped: 1
+  - equipmentCode: 4001
+    count: 1
+    level: 1
+    isEquipped: 1
+  - equipmentCode: 5001
+    count: 1
+    level: 1
+    isEquipped: 1
 --- !u!4 &880709287
 Transform:
   m_ObjectHideFlags: 0

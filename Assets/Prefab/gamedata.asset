@@ -15,132 +15,358 @@ MonoBehaviour:
   items:
   - code: 1
     name: aa
-    price: 22
-    bbb: 1
     itemType: 1
-    lootRange:
-      min: 1
-      max: 2
   - code: 2
     name: bb
-    price: 23
-    bbb: 2
     itemType: 2
-    lootRange:
-      min: 0
-      max: 0
   - code: 3
     name: cc
-    price: 24
-    bbb: 3
     itemType: 2
-    lootRange:
-      min: 0
-      max: 0
   - code: 4
     name: aa
-    price: 25
-    bbb: 4
     itemType: 1
-    lootRange:
-      min: 0
-      max: 0
   - code: 5
     name: bb
-    price: 26
-    bbb: 5
     itemType: 0
-    lootRange:
-      min: 0
-      max: 0
   - code: 6
     name: aa
-    price: 27
-    bbb: 7
     itemType: 0
-    lootRange:
-      min: 0
-      max: 0
   - code: 7
     name: bb
-    price: 28
-    bbb: 8
     itemType: 2
-    lootRange:
-      min: 0
-      max: 0
   - code: 8
     name: cc
-    price: 29
-    bbb: 9
     itemType: 2
-    lootRange:
-      min: 0
-      max: 0
   - code: 9
     name: aa
-    price: 30
-    bbb: 10
     itemType: 0
-    lootRange:
-      min: 0
-      max: 0
   - code: 10
     name: bb
-    price: 31
-    bbb: 11
     itemType: 2
-    lootRange:
-      min: 0
-      max: 0
   - code: 11
     name: cc
-    price: 32
-    bbb: 12
     itemType: 1
-    lootRange:
-      min: 0
-      max: 0
   - code: 12
     name: aa
-    price: 33
-    bbb: 13
     itemType: 2
-    lootRange:
-      min: 0
-      max: 0
   - code: 13
     name: bb
-    price: 34
-    bbb: 14
     itemType: 2
-    lootRange:
-      min: 0
-      max: 0
   - code: 14
     name: cc
-    price: 35
-    bbb: 15
     itemType: 0
-    lootRange:
-      min: 0
-      max: 0
   - code: 15
     name: aa
-    price: 36
-    bbb: 16
     itemType: 1
-    lootRange:
-      min: 0
-      max: 0
   - code: 16
     name: bb
-    price: 37
-    bbb: 17
     itemType: 1
-    lootRange:
-      min: 0
-      max: 0
+  equipments:
+  - code: 1001
+    name: sword1
+    grade: 1
+    equipSlot: 0
+    stats:
+      statValues:
+      - stat: 0
+        val: 30
+      - stat: 1
+        val: 30
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 1002
+    name: sword2
+    grade: 1
+    equipSlot: 0
+    stats:
+      statValues:
+      - stat: 0
+        val: 30
+      - stat: 1
+        val: 31
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 1003
+    name: sword3
+    grade: 1
+    equipSlot: 0
+    stats:
+      statValues:
+      - stat: 0
+        val: 30
+      - stat: 1
+        val: 32
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 1004
+    name: sword4
+    grade: 1
+    equipSlot: 0
+    stats:
+      statValues:
+      - stat: 0
+        val: 30
+      - stat: 1
+        val: 33
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 1005
+    name: sword5
+    grade: 1
+    equipSlot: 0
+    stats:
+      statValues:
+      - stat: 0
+        val: 30
+      - stat: 1
+        val: 34
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 2001
+    name: armor1
+    grade: 1
+    equipSlot: 1
+    stats:
+      statValues:
+      - stat: 1
+        val: 40
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 2002
+    name: armor2
+    grade: 1
+    equipSlot: 1
+    stats:
+      statValues:
+      - stat: 1
+        val: 41
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 2003
+    name: armor3
+    grade: 1
+    equipSlot: 1
+    stats:
+      statValues:
+      - stat: 1
+        val: 42
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 2004
+    name: armor4
+    grade: 1
+    equipSlot: 1
+    stats:
+      statValues:
+      - stat: 1
+        val: 43
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 2005
+    name: armor5
+    grade: 1
+    equipSlot: 1
+    stats:
+      statValues:
+      - stat: 1
+        val: 44
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 3001
+    name: ring1
+    grade: 1
+    equipSlot: 3
+    stats:
+      statValues:
+      - stat: 0
+        val: 20
+      - stat: 1
+        val: 20
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 3002
+    name: ring2
+    grade: 1
+    equipSlot: 3
+    stats:
+      statValues:
+      - stat: 0
+        val: 20
+      - stat: 1
+        val: 21
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 3003
+    name: ring3
+    grade: 1
+    equipSlot: 3
+    stats:
+      statValues:
+      - stat: 0
+        val: 20
+      - stat: 1
+        val: 22
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 3004
+    name: ring4
+    grade: 1
+    equipSlot: 3
+    stats:
+      statValues:
+      - stat: 0
+        val: 20
+      - stat: 1
+        val: 23
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 3005
+    name: ring5
+    grade: 1
+    equipSlot: 3
+    stats:
+      statValues:
+      - stat: 0
+        val: 20
+      - stat: 1
+        val: 24
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 4001
+    name: boots1
+    grade: 1
+    equipSlot: 2
+    stats:
+      statValues:
+      - stat: 1
+        val: 35
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 4002
+    name: boots2
+    grade: 1
+    equipSlot: 2
+    stats:
+      statValues:
+      - stat: 1
+        val: 36
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 4003
+    name: boots3
+    grade: 1
+    equipSlot: 2
+    stats:
+      statValues:
+      - stat: 1
+        val: 37
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 4004
+    name: boots4
+    grade: 1
+    equipSlot: 2
+    stats:
+      statValues:
+      - stat: 1
+        val: 38
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 4005
+    name: boots5
+    grade: 1
+    equipSlot: 2
+    stats:
+      statValues:
+      - stat: 1
+        val: 39
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 5001
+    name: shield1
+    grade: 1
+    equipSlot: 4
+    stats:
+      statValues:
+      - stat: 0
+        val: 10
+      - stat: 1
+        val: 25
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 5002
+    name: shield2
+    grade: 1
+    equipSlot: 4
+    stats:
+      statValues:
+      - stat: 0
+        val: 10
+      - stat: 1
+        val: 26
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 5003
+    name: shield3
+    grade: 1
+    equipSlot: 4
+    stats:
+      statValues:
+      - stat: 0
+        val: 10
+      - stat: 1
+        val: 27
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 5004
+    name: shield4
+    grade: 1
+    equipSlot: 4
+    stats:
+      statValues:
+      - stat: 0
+        val: 10
+      - stat: 1
+        val: 28
+    statsPerLv:
+      statValues: []
+    iconPath: 
+  - code: 5005
+    name: shield5
+    grade: 1
+    equipSlot: 4
+    stats:
+      statValues:
+      - stat: 0
+        val: 10
+      - stat: 1
+        val: 29
+    statsPerLv:
+      statValues: []
+    iconPath: 
   monsters:
   - code: 1
     name:
