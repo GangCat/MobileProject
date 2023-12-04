@@ -25,3 +25,27 @@ MonoBehaviour:
     kor: "\uACE8\uB4DC\uAC00 \uBD80\uC871\uD569\uB2C8\uB2E4."
     eng: Not enough gold
     jp: 
+  - code: status
+    kor: "\uC2A4\uD0EF"
+    eng: Status
+    jp: 33
+  - code: equip
+    kor: "\uC7A5\uBE44"
+    eng: Equip
+    jp: 
+  - code: skill
+    kor: "\uC2A4\uD0AC"
+    eng: Skill
+    jp: 
+  - code: world
+    kor: "\uC6D4\uB4DC"
+    eng: World
+    jp: 
+  - code: shop
+    kor: "\uC0C1\uC810"
+    eng: Shop
+    jp: 
+  - code: enterDungeon
+    kor: "\uC785\uC7A5"
+    eng: Enter
+    jp: 

@@ -7,6 +7,7 @@ public class ListController<T> : MonoBehaviour
 {
     // 화면에 표시될 화면, 마스크처리되서 딱 보이는 화면
     public ScrollRect scrollRect;
+    public RectTransform viewPortRect;
     // 실제 내용이 다 들어가있을 컨텐트의 렉트 트랜스폼
     public RectTransform ContentRt => scrollRect.content;
     // 복사할 셀의 게임오브젝트
@@ -25,6 +26,7 @@ public class ListController<T> : MonoBehaviour
 
     float itemCellHeight;
     float scrollRectHeight;
+    float viewPortHeight;
     (int, int) prevStartEndIdx;
 
     /// <summary>
@@ -90,7 +92,7 @@ public class ListController<T> : MonoBehaviour
 
             Debug.Log($"--{idx}---");
             var aPos= rt.anchoredPosition;
-            aPos.y = idx * -350f;
+            aPos.y = idx * -itemCellHeight;
             rt.anchoredPosition = aPos;
 
             cell.SetData(data[idx], idx);
@@ -122,7 +124,8 @@ public class ListController<T> : MonoBehaviour
         // 이 인덱스는 현재 화면에 보일 총 셀의 개수를 의미함.
         // 가장 위의 셀의 높이를 렉트의 높이에서 뺀 값을 셀의 높이로 나눈 몫임.
         // 그러므로 계산되는 개수는 총 표시될 셀의 개수 -1개임.
-        var cellCountInScreen = Mathf.CeilToInt( (scrollRectHeight - (itemCellHeight - (contentPosY % 350))) / itemCellHeight);
+        //var cellCountInScreen = Mathf.CeilToInt( (scrollRectHeight - (itemCellHeight - (contentPosY % itemCellHeight))) / itemCellHeight);
+        var cellCountInScreen = Mathf.CeilToInt( (viewPortHeight - (itemCellHeight - (contentPosY % itemCellHeight))) / itemCellHeight);
 
         var startIdx = lowestIdxInScreen;
         var endIdx = lowestIdxInScreen + cellCountInScreen;
@@ -166,10 +169,11 @@ public class ListController<T> : MonoBehaviour
         itemCells = new List<ListItemCell<T>>();
 
         scrollRectHeight = (scrollRect.transform as RectTransform).rect.height;
+        viewPortHeight = viewPortRect.rect.height;
         itemCellHeight = (firstItemCell.transform as RectTransform).rect.height;
         sRect = (scrollRect.transform as RectTransform).rect;
 
-        var maxCellCount = (scrollRectHeight / itemCellHeight) + 1;
+        int maxCellCount = Mathf.RoundToInt(scrollRectHeight / itemCellHeight) + 1;
         Debug.Log($"maxCell{maxCellCount} {scrollRectHeight} {itemCellHeight}");
 
         // 아이템셀이 화면에 표시될 최대 개수를 정해서
