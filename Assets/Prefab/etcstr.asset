@@ -9,15 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 56a45ed8bc633e04cbb4818519c3539e, type: 3}
   m_Name: etcstr
-  m_EditorClassIdentifier: Assembly-CSharp::EtcStrList
+  m_EditorClassIdentifier: 
   etcStrList:
   - code: setting
-    kor: 
-    eng: 
+    kor: "\uC124\uC815"
+    eng: setting
     jp: 11
   - code: gold
-    kor: 
-    eng: 
+    kor: "\uACE8\uB4DC"
+    eng: gold
     jp: 22
+  - code: NotEnoughGold
+    kor: "\uACE8\uB4DC\uAC00 \uBD80\uC871\uD569\uB2C8\uB2E4."
+    eng: Not enough gold
+    jp: 

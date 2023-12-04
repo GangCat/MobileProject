@@ -13,4 +13,19 @@ public class UserData
     public List<int> equippedSkillCodes = new List<int>();
 
     public int gold;
+
+
+
+
+    public void IncrCurrency(CurrencyPair currency)
+    {
+        switch (currency.currencyType)
+        {
+            case CurrencyType.Gold:
+                gold += currency.amount;
+                break;
+            case CurrencyType.DungeonKey:
+                break;
+        }
+    }
 }

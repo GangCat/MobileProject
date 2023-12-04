@@ -72,6 +72,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35a1f8ce13ce1fa4abec8cc521bd0aca
+    m_Address: BackGround/Background_Forest.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6aeaad68475d2854e8d568862e08b138
+    m_Address: BackGround/Background_SmallCave.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9746b18769b7e7444b7afad05742ec27, type: 2}
   m_SchemaSet:

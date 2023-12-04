@@ -18,7 +18,6 @@ public class MyAllPostprocessor : AssetPostprocessor
                 // csv에서 파일 읽어와서 list<strUsage>에 저장
                 DataConvertor.ReadStrUsageFromCsv();
                 DataConvertor.ExcelToGameData();
-
                 DataConvertor.UpdateCsv();
                 // csv에 변경된 사항 적용
             }

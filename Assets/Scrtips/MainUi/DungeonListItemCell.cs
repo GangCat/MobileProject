@@ -1,3 +1,4 @@
+using DI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,12 @@ public class DungeonListItemCell : ListItemCell<Dungeon>
 
     Dungeon currentDungeon;
 
+    [Inject]
+    UserData userData;
+
     private void Start()
     {
+        DIContainer.Inject(this);
         enterDungeonButton.onClick.AddListener(EnterDungeon);
     }
 
@@ -24,6 +29,14 @@ public class DungeonListItemCell : ListItemCell<Dungeon>
 
     void EnterDungeon()
     {
+        if (userData.gold < currentDungeon.dungeonCost.amount)
+        {
+            EventBus.Publish(new ErrorMessageEvent("NotEnoughGold"));
+
+            return;
+        }
+
+        userData.gold -= currentDungeon.dungeonCost.amount;
         EventBus.Publish(new EnterToDungeon()
         {
             dungeon = currentDungeon

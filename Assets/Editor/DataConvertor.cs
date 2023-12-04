@@ -117,8 +117,6 @@ public class DataConvertor
 
     public static void UpdateCsv()
     {
-
-
         DataTable dataTable = new DataTable();
         var filePath = "Assets/xlsx/str.csv";
         var classType = typeof(StrUsage);

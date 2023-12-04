@@ -89,6 +89,7 @@ public class Stage
     // 스테이지 보스몹
     public int bossCode;
     List<Monster> _monsterList;
+    public string backgroundPath;
     public List<Monster> Monsters
     {
         get => _monsterList;

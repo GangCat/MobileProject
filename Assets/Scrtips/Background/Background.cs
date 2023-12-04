@@ -2,13 +2,14 @@ using DI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class Background : DIMono
 {
     [Inject]
     Camera mainCam;
 
-    private void Update()
+    private void LateUpdate()
     {
         Vector3 curPos = transform.position;
         curPos.x = mainCam.transform.position.x;
@@ -16,5 +17,7 @@ public class Background : DIMono
     }
 
     public float pallaSpeed;
+
+   
 
 }

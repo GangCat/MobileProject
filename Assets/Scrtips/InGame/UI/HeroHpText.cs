@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DI;
 using TMPro;
+using System.Text;
 
 public class HeroHpText : DIMono
 {
@@ -15,10 +16,13 @@ public class HeroHpText : DIMono
     int prevHP;
     int prevMaxHP;
 
+    StringBuilder sb;
+
     public override void Init()
     {
         text = GetComponent<TMP_Text>();
         heroUnit = mainObjs.HeroUnit;
+
         UpdateText();
     }
 

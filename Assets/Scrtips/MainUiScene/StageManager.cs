@@ -22,6 +22,7 @@ public class StageManager : DIMono
         EventBus.Subscribe<RestartCurrentStage>(RestartCurrentStage);
         EventBus.Subscribe<ChangeToNextStage>(ChangeToNextStage);
         EventBus.Subscribe<EnterToDungeon>(EnterToDungeon);
+        EventBus.Subscribe<ReturnToLastNormalStage>(ReturnToLastNormalStage);
     }
 
     private void Update()
@@ -69,6 +70,7 @@ public class StageManager : DIMono
         // 다음 스테이지를 찾아냄.
         // 지금은 1, 2, 3 처럼되서 +1로 찾으면 됨.
         // 나중에 101, 102로 해야 함.
+        playData.currentKilledEnemyCount = 0;
         var nextStage = gameData.stages.Find(l => l.code == playData.currentStage.code + 1);
         StartCoroutine(ChangeSceneProcessCoroutine(nextStage));
     }
@@ -84,6 +86,11 @@ public class StageManager : DIMono
         StartCoroutine(ChangeSceneProcessCoroutine(dungeonStage));
     }
 
+    public void ReturnToLastNormalStage(ReturnToLastNormalStage _obj)
+    {
+        StartCoroutine(ChangeSceneProcessCoroutine(playData.lastNormalStage));
+    }
+
     IEnumerator ChangeSceneProcessCoroutine(Stage _stage, bool _isBossStage = false)
     {
         // 페이드 인 대기
@@ -94,8 +101,12 @@ public class StageManager : DIMono
         while (!unloadOperation.isDone)
             yield return null;
 
+        if (_stage.type == SpaceType.Dungeon && playData.currentStage.type == SpaceType.Stage)
+            playData.lastNormalStage = playData.currentStage;
+
         playData.currentStage = _stage;
         playData.isBossStage = _isBossStage;
+
 
         var loadOperation = SceneManager.LoadSceneAsync("GameScene", LoadSceneMode.Additive);
 
@@ -133,5 +144,6 @@ public class StageManager : DIMono
         EventBus.Unsubscribe<RestartCurrentStage>(RestartCurrentStage);
         EventBus.Unsubscribe<ChangeToNextStage>(ChangeToNextStage);
         EventBus.Unsubscribe<EnterToDungeon>(EnterToDungeon);
+        EventBus.Unsubscribe<ReturnToLastNormalStage>(ReturnToLastNormalStage);
     }
 }

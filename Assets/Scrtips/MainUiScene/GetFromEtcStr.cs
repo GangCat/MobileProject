@@ -17,6 +17,7 @@ public class GetFromEtcStr : DIMono
     public override void Init()
     {
         base.Init();
+        DIContainer.Inject(this);
         txt=this.GetComponent<TMPro.TMP_Text>();
         txt.text = etcStrList.GetStr(code);
     }

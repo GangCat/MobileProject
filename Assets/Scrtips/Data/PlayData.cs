@@ -13,6 +13,8 @@ public class PlayData
     /// </summary>
     public Stage currentStage;
 
+    public Stage lastNormalStage;
+
     /// <summary>
     /// 스킬의 잔여 쿨타임을 관리
     /// </summary>
@@ -22,6 +24,8 @@ public class PlayData
     /// 현재 스테이지가 보스가 출현할 스테이지인지 알려주는 용도
     /// </summary>
     public bool isBossStage;
+
+    public int currentKilledEnemyCount;
 }
 /// <summary>
 /// 여러 장소에서 접근하기 위한 클래스

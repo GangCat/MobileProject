@@ -1,6 +1,7 @@
 using DI;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -17,6 +18,9 @@ public class EnemyUnitManager : DIMono
 
     [Inject]
     MainObjs mainObjs;
+
+    [Inject]
+    UserData userData;
 
     List<EnemyUnit> EnemyUnits => mainObjs.EnemyUnits;
 
@@ -137,6 +141,16 @@ public class EnemyUnitManager : DIMono
             isRestartStage = true;
             if (playdata.isBossStage)
                 EventBus.Publish(new ChangeToNextStage());
+            else if (playdata.currentStage.type == SpaceType.Dungeon)
+            {
+                var dungeon = gameData.dungeons.Find(l => l.stageCode == playdata.currentStage.code);
+                foreach(var r in dungeon.reward.listRewards)
+                {
+                    userData.IncrCurrency(r);
+                }
+
+                EventBus.Publish(new ReturnToLastNormalStage());
+            }
             else
                 EventBus.Publish(new RestartCurrentStage());
             return;
@@ -150,6 +164,7 @@ public class EnemyUnitManager : DIMono
                 continue;
 
             mainObjs.EnemyUnits.Remove(enemy);
+            ++playdata.currentKilledEnemyCount;
         }
     }
 }

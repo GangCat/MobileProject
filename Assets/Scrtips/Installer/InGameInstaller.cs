@@ -3,6 +3,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class InGameInstaller : MonoBehaviour
 {
@@ -23,9 +25,18 @@ public class InGameInstaller : MonoBehaviour
 
     public List<SkillCodeAndLv> initSkillCodes;
 
+    GameObject backgroundObj;
+
     DIContainer container;
+
+    [Inject]
+    GameData gameData;
+    [Inject]
+    PlayData playData;
+
     private void Awake()
     {
+        DIContainer.Inject(this);
         // 먼저 로컬로 쓸 컨테이너 생성
         container = new DIContainer();
         // 로컬로 지정
@@ -65,10 +76,23 @@ public class InGameInstaller : MonoBehaviour
         objectPoolMng.PrepareObjects("Assets/Prefab/BossEnemy.prefab");
         objectPoolMng.PrepareObjects("Assets/Prefab/P_DamageFont.prefab");
         container.Regist("Assets/Prefab/P_DamageFont.prefab", "DamageFontPath");
+
+
+
+        LoadBackground();
+    }
+
+    GameObject bgPrefab;
+    private void LoadBackground()
+    {
+        bgPrefab = Addressables.LoadAssetAsync<GameObject>(playData.currentStage.backgroundPath).WaitForCompletion();
+        backgroundObj = Instantiate(bgPrefab);
     }
 
     private void OnDestroy()
     {
+        Addressables.Release(bgPrefab);
+
         DIContainer.RemoveContainer(container);
     }
 }
