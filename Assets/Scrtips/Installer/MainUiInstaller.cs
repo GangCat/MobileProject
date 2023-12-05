@@ -9,12 +9,23 @@ public class TestLvPair
 {
     public int code, level;
 }
+[Serializable]
+public class CodeAndEquipmentSlot
+{
+    public int code;
+    public EquipmentSlot slot;
+}
+
 
 [Serializable]
 public class TestSetting
 {
     public List<TestLvPair> statLevels;
     public int gold;
+     
+    public List<CodeAndEquipmentSlot> initEquipments = new List<CodeAndEquipmentSlot>();
+    public List<int> initEquipSlots = new List<int>();
+
 }
 
 [Serializable]
@@ -50,8 +61,7 @@ public class MainUiInstaller : MonoBehaviour
 
     public GameSetting gameSetting;
 
-    // 서버에서 받아올 장착중인 아이템 정보 리스트
-    public List<EquipmentSlot> initEquipSlots = new List<EquipmentSlot>();
+
 
     private void Awake()
     {
@@ -64,7 +74,15 @@ public class MainUiInstaller : MonoBehaviour
         var userData = DIContainer.GetObjT<UserData>();
 
 #if UNITY_EDITOR
+        userData.equipSlots = TestSetting.initEquipSlots;
+        var eq = new Dictionary<int, EquipmentSlot>();
 
+        foreach(var codeAndSlot in TestSetting.initEquipments)
+        {
+            eq[codeAndSlot.code] = codeAndSlot.slot;
+        }
+
+        userData.equipments = eq;
 
         foreach (var pair in TestSetting.statLevels)
             userData.statusCodePerLv[pair.code] = pair.level;
@@ -72,26 +90,32 @@ public class MainUiInstaller : MonoBehaviour
         userData.gold = TestSetting.gold;
 #endif
 
+
+        container.Regist(etcStrList);
+
+        InitAndRegistPlayerStat(gameData, userData);
+    }
+
+    private void InitAndRegistPlayerStat(GameData gameData, UserData userData)
+    {
         var playerStatGroup = new PlayerStatGroup();
 
         var playerStatByStat = new PlayerStatByStatus();
         playerStatGroup.SetPlayerStat(PlayerStatGroup.Layer.FirstValue, new FirstStat());
         playerStatGroup.SetPlayerStat(PlayerStatGroup.Layer.Stat, playerStatByStat);
-        
-        // 여기서 장비도 SetPlayerStat
         var playerEquipStat = new EquipmentStat();
-        foreach (var eq in initEquipSlots)
+        foreach (var eCode in userData.equipSlots)
         {
-            var equipment = gameData.equipments.Find(l => l.code == eq.equipmentCode);
-            playerEquipStat.Equip(equipment, eq.level);
-            userData.equipSlots[(int)equipment.equipSlot] = equipment.code;
+            var equipmentSlot = userData.equipments[eCode];
+            var equipment = gameData.equipments.Find(l => l.code == eCode);
+
+            playerEquipStat.Equip(equipment, equipmentSlot.level);
         }
         playerStatGroup.SetPlayerStat(PlayerStatGroup.Layer.Equipment, playerEquipStat);
 
         // 각 레이어별 스탯 수치 적용.
         playerStatGroup.Init();
 
-        container.Regist(etcStrList);
         container.Regist(playerStatByStat);
         container.Regist(playerEquipStat);
         container.Regist(playerStatGroup);

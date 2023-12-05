@@ -64,7 +64,7 @@ MonoBehaviour:
   equipments:
   - code: 1001
     name: sword1
-    grade: 1
+    grade: 0
     equipSlot: 0
     stats:
       statValues:
@@ -74,10 +74,11 @@ MonoBehaviour:
         val: 30
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 1002
     name: sword2
-    grade: 1
+    grade: 0
     equipSlot: 0
     stats:
       statValues:
@@ -87,10 +88,11 @@ MonoBehaviour:
         val: 31
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 1003
     name: sword3
-    grade: 1
+    grade: 0
     equipSlot: 0
     stats:
       statValues:
@@ -100,10 +102,11 @@ MonoBehaviour:
         val: 32
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 1004
     name: sword4
-    grade: 1
+    grade: 0
     equipSlot: 0
     stats:
       statValues:
@@ -113,10 +116,11 @@ MonoBehaviour:
         val: 33
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 1005
     name: sword5
-    grade: 1
+    grade: 0
     equipSlot: 0
     stats:
       statValues:
@@ -126,10 +130,81 @@ MonoBehaviour:
         val: 34
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
+  - code: 1006
+    name: sword11
+    grade: 1
+    equipSlot: 0
+    stats:
+      statValues:
+      - stat: 0
+        val: 50
+      - stat: 1
+        val: 30
+    statsPerLv:
+      statValues: []
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
+  - code: 1007
+    name: sword12
+    grade: 1
+    equipSlot: 0
+    stats:
+      statValues:
+      - stat: 0
+        val: 50
+      - stat: 1
+        val: 31
+    statsPerLv:
+      statValues: []
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
+  - code: 1008
+    name: sword13
+    grade: 1
+    equipSlot: 0
+    stats:
+      statValues:
+      - stat: 0
+        val: 50
+      - stat: 1
+        val: 32
+    statsPerLv:
+      statValues: []
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
+  - code: 1009
+    name: sword14
+    grade: 1
+    equipSlot: 0
+    stats:
+      statValues:
+      - stat: 0
+        val: 50
+      - stat: 1
+        val: 33
+    statsPerLv:
+      statValues: []
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
+  - code: 1010
+    name: sword15
+    grade: 1
+    equipSlot: 0
+    stats:
+      statValues:
+      - stat: 0
+        val: 50
+      - stat: 1
+        val: 34
+    statsPerLv:
+      statValues: []
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 2001
     name: armor1
-    grade: 1
+    grade: 0
     equipSlot: 1
     stats:
       statValues:
@@ -137,10 +212,11 @@ MonoBehaviour:
         val: 40
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 2002
     name: armor2
-    grade: 1
+    grade: 0
     equipSlot: 1
     stats:
       statValues:
@@ -148,10 +224,11 @@ MonoBehaviour:
         val: 41
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 2003
     name: armor3
-    grade: 1
+    grade: 0
     equipSlot: 1
     stats:
       statValues:
@@ -159,10 +236,11 @@ MonoBehaviour:
         val: 42
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 2004
     name: armor4
-    grade: 1
+    grade: 0
     equipSlot: 1
     stats:
       statValues:
@@ -170,10 +248,11 @@ MonoBehaviour:
         val: 43
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 2005
     name: armor5
-    grade: 1
+    grade: 0
     equipSlot: 1
     stats:
       statValues:
@@ -181,10 +260,11 @@ MonoBehaviour:
         val: 44
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 3001
     name: ring1
-    grade: 1
+    grade: 0
     equipSlot: 3
     stats:
       statValues:
@@ -194,10 +274,11 @@ MonoBehaviour:
         val: 20
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 3002
     name: ring2
-    grade: 1
+    grade: 0
     equipSlot: 3
     stats:
       statValues:
@@ -207,10 +288,11 @@ MonoBehaviour:
         val: 21
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 3003
     name: ring3
-    grade: 1
+    grade: 0
     equipSlot: 3
     stats:
       statValues:
@@ -220,10 +302,11 @@ MonoBehaviour:
         val: 22
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 3004
     name: ring4
-    grade: 1
+    grade: 0
     equipSlot: 3
     stats:
       statValues:
@@ -233,10 +316,11 @@ MonoBehaviour:
         val: 23
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 3005
     name: ring5
-    grade: 1
+    grade: 0
     equipSlot: 3
     stats:
       statValues:
@@ -246,10 +330,11 @@ MonoBehaviour:
         val: 24
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 4001
     name: boots1
-    grade: 1
+    grade: 0
     equipSlot: 2
     stats:
       statValues:
@@ -257,10 +342,11 @@ MonoBehaviour:
         val: 35
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 4002
     name: boots2
-    grade: 1
+    grade: 0
     equipSlot: 2
     stats:
       statValues:
@@ -268,10 +354,11 @@ MonoBehaviour:
         val: 36
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 4003
     name: boots3
-    grade: 1
+    grade: 0
     equipSlot: 2
     stats:
       statValues:
@@ -279,10 +366,11 @@ MonoBehaviour:
         val: 37
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 4004
     name: boots4
-    grade: 1
+    grade: 0
     equipSlot: 2
     stats:
       statValues:
@@ -290,10 +378,11 @@ MonoBehaviour:
         val: 38
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 4005
     name: boots5
-    grade: 1
+    grade: 0
     equipSlot: 2
     stats:
       statValues:
@@ -301,10 +390,11 @@ MonoBehaviour:
         val: 39
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 5001
     name: shield1
-    grade: 1
+    grade: 0
     equipSlot: 4
     stats:
       statValues:
@@ -314,10 +404,11 @@ MonoBehaviour:
         val: 25
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 5002
     name: shield2
-    grade: 1
+    grade: 0
     equipSlot: 4
     stats:
       statValues:
@@ -327,10 +418,11 @@ MonoBehaviour:
         val: 26
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 5003
     name: shield3
-    grade: 1
+    grade: 0
     equipSlot: 4
     stats:
       statValues:
@@ -340,10 +432,11 @@ MonoBehaviour:
         val: 27
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 5004
     name: shield4
-    grade: 1
+    grade: 0
     equipSlot: 4
     stats:
       statValues:
@@ -353,10 +446,11 @@ MonoBehaviour:
         val: 28
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   - code: 5005
     name: shield5
-    grade: 1
+    grade: 0
     equipSlot: 4
     stats:
       statValues:
@@ -366,7 +460,8 @@ MonoBehaviour:
         val: 29
     statsPerLv:
       statValues: []
-    iconPath: 
+    iconPath: icons[equipIcon]
+    _icon: {fileID: 0}
   monsters:
   - code: 1
     name:

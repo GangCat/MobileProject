@@ -22,6 +22,11 @@ public class EquipmentStat : PlayerStat
 
         // 레벨별 증가량 적용시키기.
 
+        foreach(var st in equipment.statsPerLv)
+        {
+            ps.IncrStat(st.stat, st.val*level);
+        }
+
         foreach(var st in equipment.stats)
         {
             ps.IncrStat(st.stat, st.val);

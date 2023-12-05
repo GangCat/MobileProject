@@ -209,72 +209,81 @@ public class DataConvertor
                 var fieldType = fi.FieldType;
                 //  마지막에 저장할 값, SetValue할 때 들어갈 값
                 object finalValue;
-
-                // IParsable이라는 인터페이스를 지녔는지 확인함.
-                // 해당 인터페이스는 Data에서 확인해볼 수 있음. 어떻게 선언하고 사용하는지
-                if(fieldType.GetInterface("IParsable")!=null)
+                try
                 {
 
-                    // Activator.CreateInstance 메소드를 사용하면 해당 필드타입의 인스턴스, 객체를 생성함.
-                    var obj = Activator.CreateInstance(fieldType);
-                    // 생성한 객체의 타입을 인터페이스의 객체로 변환.
-                    var parsable= obj as IParsable;
-                    // 인터페이스의 함수를 호출
-                    parsable.FillFromStr(cellValue.ToString());
-
-                    if (fieldType == typeof(Str))
+                    // IParsable이라는 인터페이스를 지녔는지 확인함.
+                    // 해당 인터페이스는 Data에서 확인해볼 수 있음. 어떻게 선언하고 사용하는지
+                    if (fieldType.GetInterface("IParsable") != null)
                     {
-                        var str = parsable as Str;
-                        // 현재 시트에서 코드칼럼이 어디있는지 확인
-                        var codeIdx = namePerColIdx["code"];
-                        // 코드 칼럼에서 현재 로우와 교차되는 위치를 확인해서 그 값을 코드로 사용
-                        var code = (int)Convert.ChangeType(itemtable.Rows[r][codeIdx],typeof(int));
 
-                        var strUsage = strUsages.Find(l => l.hostName == itemtable.TableName && l.fieldName == name && l.code == code);
-                        Debug.Log($"str.kor: {str.kor}");
+                        // Activator.CreateInstance 메소드를 사용하면 해당 필드타입의 인스턴스, 객체를 생성함.
+                        var obj = Activator.CreateInstance(fieldType);
+                        // 생성한 객체의 타입을 인터페이스의 객체로 변환.
+                        var parsable = obj as IParsable;
+                        // 인터페이스의 함수를 호출
+                        parsable.FillFromStr(cellValue.ToString());
 
-                        if (strUsage == null)
+                        if (fieldType == typeof(Str))
                         {
-                            strUsages.Add(new StrUsage()
+                            var str = parsable as Str;
+                            // 현재 시트에서 코드칼럼이 어디있는지 확인
+                            var codeIdx = namePerColIdx["code"];
+                            // 코드 칼럼에서 현재 로우와 교차되는 위치를 확인해서 그 값을 코드로 사용
+                            var code = (int)Convert.ChangeType(itemtable.Rows[r][codeIdx], typeof(int));
+
+                            var strUsage = strUsages.Find(l => l.hostName == itemtable.TableName && l.fieldName == name && l.code == code);
+                            Debug.Log($"str.kor: {str.kor}");
+
+                            if (strUsage == null)
                             {
-                                code = code,
-                                hostName = itemtable.TableName,
-                                fieldName = name,
-                                kr = str.kor
-                            });
+                                strUsages.Add(new StrUsage()
+                                {
+                                    code = code,
+                                    hostName = itemtable.TableName,
+                                    fieldName = name,
+                                    kr = str.kor
+                                });
+                            }
+                            else if (strUsage.kr != str.kor)
+                            {
+                                strUsage.kr = str.kor;
+                                strUsage.en = "";
+                                strUsage.jp = "";
+                            }
+                            else
+                            {
+                                str.eng = strUsage.en;
+                                str.jp = strUsage.jp;
+                            }
                         }
-                        else if(strUsage.kr != str.kor)
-                        {
-                            strUsage.kr = str.kor;
-                            strUsage.en = "";
-                            strUsage.jp = "";
-                        }
-                        else
-                        {
-                            str.eng = strUsage.en;
-                            str.jp = strUsage.jp;
-                        }
+
+                        // 값 갱신
+                        finalValue = parsable;
+                    }
+                    // 혹시 Enum이라면
+                    else if (fieldType.IsEnum)
+                    {
+                        // Enum을 파싱해서 값 저장.
+                        finalValue = Enum.Parse(fieldType, (string)cellValue);
+                    }
+                    else
+                    {
+                        // 컨버트를 쓰면변환할 수 있음.
+                        // 하지만 이러면 기본 자료형만 가능함.
+                        finalValue = Convert.ChangeType(cellValue, fieldType);
                     }
 
-                    // 값 갱신
-                    finalValue = parsable;
-                }
-                // 혹시 Enum이라면
-                else if (fieldType.IsEnum)
-                {
-                    // Enum을 파싱해서 값 저장.
-                    finalValue = Enum.Parse(fieldType, (string)cellValue);
-                }
-                else
-                {
-                    // 컨버트를 쓰면변환할 수 있음.
-                    // 하지만 이러면 기본 자료형만 가능함.
-                    finalValue = Convert.ChangeType(cellValue, fieldType);
-                }
+                    // 셋 벨류로 값을 저장.
+                    fi.SetValue(tempItem, finalValue);
+                    // 이를 반복
 
-                // 셋 벨류로 값을 저장.
-                fi.SetValue(tempItem, finalValue);
-                // 이를 반복
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Table[{sheetName}] row{r} col{colIdx} {name}");
+                }
+              
             }
 
             // 엑셀 시트의 구분(code, price 등)이 없다면 컨티뉴

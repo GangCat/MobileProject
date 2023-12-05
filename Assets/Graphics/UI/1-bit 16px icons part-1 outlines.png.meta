@@ -9077,7 +9077,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1-bit 16px icons part-1 outlines_427
+      name: equipIcon
       rect:
         serializedVersion: 2
         x: 7
@@ -9890,7 +9890,6 @@ TextureImporter:
       1-bit 16px icons part-1 outlines_424: -1065232340
       1-bit 16px icons part-1 outlines_425: 327636183
       1-bit 16px icons part-1 outlines_426: 1568596572
-      1-bit 16px icons part-1 outlines_427: 370798630
       1-bit 16px icons part-1 outlines_428: 973281469
       1-bit 16px icons part-1 outlines_429: 892601378
       1-bit 16px icons part-1 outlines_43: -543388232
@@ -9976,6 +9975,7 @@ TextureImporter:
       ExplosionSkill: 2127750566
       FireBallSkill: 1859025572
       MagicTornadoSkill: -282530903
+      equipIcon: 370798630
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

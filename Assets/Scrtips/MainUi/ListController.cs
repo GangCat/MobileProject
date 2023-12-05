@@ -24,6 +24,7 @@ public class ListController<T> : MonoBehaviour
     // 스크롤렉트의 렉트 확인용
     public Rect sRect;
 
+
     float itemCellHeight;
     float scrollRectHeight;
     float viewPortHeight;

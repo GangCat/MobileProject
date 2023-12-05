@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 [Serializable]
 public class EquipmentSlot
 {
-    public int equipmentCode;
     public int count, level;
-    public bool isEquipped;
 }
 
 
@@ -26,6 +24,7 @@ public class UserData
     public List<int> equipSlots = new List<int>() { 0, 0, 0, 0, 0 };
 
     public int gold;
+    public int dungeonKey;
 
     public void IncrCurrency(CurrencyPair currency)
     {
@@ -35,6 +34,7 @@ public class UserData
                 gold += currency.amount;
                 break;
             case CurrencyType.DungeonKey:
+                dungeonKey += currency.amount;
                 break;
         }
     }

@@ -120,7 +120,17 @@ public class Equipment
 {
     public int code;
     public string name;
-    public int grade;
+
+    public enum Grade
+    {
+        Normal,
+        Rare,
+        Unique,
+        Epic,
+        Legendary
+    }
+
+    public Grade grade;
 
     // Enum의 경우 공백이면 None이 들어감.
     public enum EquipSlot
@@ -134,6 +144,26 @@ public class Equipment
     public EquipSlot equipSlot;
     public StatValueList stats,statsPerLv;
     public string iconPath;
+    public Sprite _icon;
+
+    public void Init()
+    {
+        try
+        {
+            _icon = Addressables.LoadAssetAsync<Sprite>(iconPath).WaitForCompletion();
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e);
+        }
+        _icon.name = $"{code}_{name}";
+    }
+
+    public void ReleaseIcon()
+    {
+        Addressables.Release(_icon);
+        _icon = null;
+    }
 }
 
 [Serializable]

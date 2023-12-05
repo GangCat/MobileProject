@@ -44,6 +44,11 @@ public class GameData :ScriptableObject
             s.Init();
             skillDic[s.code] = s;
         }
+
+        foreach (var e in equipments)
+        {
+            e.Init();
+        }
         EventBus.Unsubscribe<ApplicationQuitEvent>(OnQuit);
         EventBus.Subscribe<ApplicationQuitEvent>(OnQuit);
     }
@@ -53,6 +58,11 @@ public class GameData :ScriptableObject
         foreach (var s in skills)
         {
             s.ReleaseIcon();
+        }
+
+        foreach(var e in equipments)
+        {
+            e.ReleaseIcon();
         }
     }
 
